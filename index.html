@@ -3,15 +3,98 @@
 <head>
     <title>Greenify Boston-Homepage</title>
     <meta name='viewport' content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+        window.onload = function() {
+            document.getElementById("hamburger-menu").addEventListener("click", () => {
+                var bottomLinks = document.getElementById("mnav-bottom");
+
+                if (bottomLinks.style.display == "none") {
+                    bottomLinks.style.display = "block";
+                } else {
+                    bottomLinks.style.display = "none";
+                }
+            });
+        };
+    </script>
 
     <style type="text/css">
     </style>
-        
-    <script>
-    </script>
+    
 </head>
 <body>
+    <!-- NAVBAR USED FOR BIGGER DEVICES -->
+    <ul id="nav">
+        <div id="nav-left">
+            <a href="index.html"><img src="greenifybostonlogo.svg"/></svg></a> 
+            <li><a href="index.html">Greenify Boston</a></li>   
+        </div>
+
+        <div id="nav-right">
+            <div class="dropdown">
+                <li id="nav-contribute" class="nav-text-element dropbtn"><a class="general_hover" href="contribute.html">Contribute</a></li>
+                <div class="dropdown-content">
+                    <li id="nav-donate" class="nav-text-element"><a href="donate.html">Donate</a></li>
+                    <li id="nav-joinourteam" class="nav-text-element"><a href="joinourteam.html">Join Our Team</a></li>
+                </div>
+            </div>
+            <li id="nav-about" class="nav-text-element"><a class="general_hover" href="about.html">About</a></li>
+            <li id="nav-contact" class="nav-text-element"><a class="general_hover" href="contact.html">Contact</a></li>
+            <li id="nav-faqs" class="nav-text-element"><a class="general_hover" href="faqs.html">FAQs</a></li>
+        </div>
+    </ul>
+
+    <!-- NAVBAR USED FOR SMALLER DEVICES -->
+    <ul id="mnav">
+        <div id ="mnav-top">
+            <div id="mnav-left">
+                <a href="index.html"><img src="greenifybostonlogo.svg"/></svg></a> 
+                <li><a href="index.html">Greenify Boston</a></li>   
+            </div>
     
+            <div id="mnav-right">
+                <svg id="hamburger-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#fffdf8" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+            </div>
+        </div>
+
+        <div style="display: none;" id="mnav-bottom">
+            <li id="mnav-contribute" class="mnav-text-element"><a class="general_hover" href="contribute.html">Contribute</a></li>
+            <li id="mnav-donate" class="mnav-text-element"><a href="donate.html">Donate</a></li>
+            <li id="mnav-joinourteam" class="mnav-text-element"><a href="joinourteam.html">Join Our Team</a></li>
+            <li id="mnav-about" class="mnav-text-element"><a class="general_hover" href="about.html">About</a></li>
+            <li id="mnav-contact" class="mnav-text-element"><a class="general_hover" href="contact.html">Contact</a></li>
+            <li id="mnav-faqs" class="mnav-text-element"><a class="general_hover" href="faqs.html">FAQs</a></li>
+        </div>     
+    </ul>
+
+
+
+    <!-- PUT CONTENT HERE -->
+
+
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <div id="footer-left-content">
+            <a id="footer-logo" href="index.html"><img src="greenifybostonlogo.svg"/></svg></a> 
+
+            <p>
+                <strong style="font-size: 18px; font-family: 'DM Serif Display', serif;">Greenify Boston</strong>
+                <br>
+                Dedicated to making Boston flourish.
+            </p>
+            
+        </div>
+
+        <div id="footer-right-content">
+            <div id="footer-buttons">
+                <a href="joinourteam.html"><p id="footer-joinourteam">Join Our Team</p></a>
+                <a href="donate.html"><p id="footer-donate">Donate</p></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
