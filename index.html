@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <script>
+        currIndex = 1;
         window.onload = function() {
             document.getElementById("hamburger-menu").addEventListener("click", () => {
                 var bottomLinks = document.getElementById("mnav-bottom");
@@ -18,10 +19,217 @@
                     bottomLinks.style.display = "none";
                 }
             });
+
+            slideshowAnimation();
+
+            function slideshowAnimation() {
+                $('#slideshow-image').fadeTo(4000, 0.5, () => {
+                    currIndex = currIndex == 5 ? 1 : currIndex + 1;
+                    $('#slideshow-image').attr("src", 'images/slider-image-' + currIndex + ".jpg");
+                    $('#slideshow-image').fadeTo(4000, 1);
+                    setTimeout(slideshowAnimation, 4000);
+                });
+            }
         };
+
     </script>
 
     <style type="text/css">
+        #section-one {
+            display: flex;
+            flex-direction: row;
+            height: 90vh;
+            color: white;
+        }
+
+        #left-content-section-one {
+            max-width: 550px;
+            background-color: #A7C6DA;
+            background-image: url('images/homepage-buildings-svg.svg');
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+
+        #left-content-section-one h1 {
+            padding: 60px 60px 0 60px;
+            font-family: "DM Serif Display", serif;
+            letter-spacing: 2px;
+            font-size: 36px;
+        }
+
+        #left-content-section-one #landing-text {
+            padding: 0 60px 40px 60px;
+            font-size: 20px;
+        }
+
+        #slideshow {
+            width: 100%;
+        }
+
+        #slideshow-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #learn-more-button {
+            background-color: #467594;
+            font-size: 20px;
+            width: 120px;
+            margin: 0 auto;
+            padding: 12px 40px;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        #learn-more-button:hover {
+            cursor: pointer;
+            background-color: white;
+            color:#467594;
+        }
+
+        #section-two {
+            overflow-x: hidden;
+            text-align: center;
+            height: fit-content;
+            padding: 60px 0;
+            background-color: #9EB25D;
+        }
+
+        #section-two-content {
+            color: white;
+            font-size: 26px;
+        }
+
+        #section-two-content #stats-table {
+            padding: 20px 0;
+            max-width: 1180px;
+        }
+
+        #section-two-content h2 {
+            font-family: "DM Serif Display", serif;
+            letter-spacing: 2px;
+            font-size: 46px;
+            margin: 26px 0;
+        }
+
+        #stats-table td {
+            padding: 0 30px;
+            max-width: 360px;
+        }
+
+        #stats-table .stat-number {
+            font-size: 40px;
+            margin-bottom: -20px;
+        }
+
+        #section-three {
+            height: 90vh;
+            background-image: url('images/homepage-trees-svg.svg');
+            background-repeat: no-repeat;
+            background-position: bottom;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;            
+        }
+
+        #section-three #left-content-section-three {
+            padding: 40px;  
+            font-size: 28px;  
+            color: #291514;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        #section-three #events-popup {
+            background-color: #467594;
+            color: white;
+            width: 360px;
+            height: fit-content;
+            padding: 40px 40px 60px 40px;
+            border-radius: 20px;
+            margin-top: -40px;
+            margin-right: 40px;
+        }
+
+        #section-three #events-popup h2 {
+            text-align: center;
+            font-family: "DM Serif Display", serif;
+            letter-spacing: 2px;
+            font-size: 32px;
+            margin-top: 10px !important;
+        }
+
+        #section-four {
+            padding: 20px 60px 0 60px;
+            background-color: #243010;
+            color: white;
+        }
+
+        #section-four h2 {
+            font-family: "DM Serif Display", serif;
+            letter-spacing: 2px;
+            font-size: 46px;
+        }
+
+        #section-four #highlights {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 20px;
+        }
+
+        #section-four #highlights .highlight-text {
+            max-width: 300px;
+            border-left: 3px solid white;
+            padding-left: 10px;
+        }
+
+        #section-five {
+            height: fit-content;
+            color: #291514;
+            font-size: 20px;
+            padding-bottom: 100px;
+        }
+
+        #section-five #content-section-five h2 {
+            font-family: "DM Serif Display", serif;
+            letter-spacing: 2px;
+            font-size: 36px;
+            margin-bottom: -20px;
+        }
+
+        #section-five #content-section-five {
+            margin-top: -40px;
+            padding: 0 60px;
+        }
+
+        #section-five #content-section-five input {
+            width: 650px;
+            height: 40px;
+        }
+
+        #section-five #content-section-five input::placeholder{
+            font-size: 20px;
+            padding-left: 10px;
+            font-family: "Montserrat", serif;
+        }
+
+        #submit-button-section-five {
+            background-color: #467594;
+            color: white;
+            width: 80px;
+            padding: 12px 40px;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        #submit-button-section-five:hover {
+            background-color:#A7C6DA;
+            cursor: pointer;
+        }
     </style>
     
 </head>
@@ -29,7 +237,7 @@
     <!-- NAVBAR USED FOR BIGGER DEVICES -->
     <ul id="nav">
         <div id="nav-left">
-            <a href="index.html"><img src="greenifybostonlogo.svg"/></svg></a> 
+            <a href="index.html"><img src="images/greenifybostonlogo.svg"/></svg></a> 
             <li><a href="index.html">Greenify Boston</a></li>   
         </div>
 
@@ -51,7 +259,7 @@
     <ul id="mnav">
         <div id ="mnav-top">
             <div id="mnav-left">
-                <a href="index.html"><img src="greenifybostonlogo.svg"/></svg></a> 
+                <a href="index.html"><img src="images/greenifybostonlogo.svg"/></a> 
                 <li><a href="index.html">Greenify Boston</a></li>   
             </div>
     
@@ -71,7 +279,130 @@
     </ul>
 
 
+    <div id="section-one">
+        <div id="left-content-section-one">
+            <h1>Help Boston Flourish</h1>
 
+            <p id="landing-text">
+                Join our  volunteers on their journey to help greenify Boston by 
+                planting trees, picking up trash, fighting for more sustainable 
+                legislation, and holding big businesses accountable.
+            </p>
+
+            <p id="learn-more-button">Learn More</p>
+        </div>
+
+        <div id="slideshow">
+            <img id="slideshow-image" src="images/slider-image-4.jpg"/>
+        </div>
+    </div>
+
+    <div id="section-two">
+        <div id="section-two-content">
+            <h2>Boston's year in numbers:</h2>
+
+            <table id="stats-table" style="margin: 0 auto;">
+                <tr>
+                    <td>
+                        <p class="stat-number"><strong>5.4 million</strong></p>
+                        <p>metric tons of greenhouse gases emitted.</p>
+                    </td>
+
+                    <td>
+                        <p class="stat-number"><strong>3.5&deg; F</strong></p>
+                        <p>increase in temperature.</p>
+                    </td>
+
+                    <td>
+                        <p class="stat-number"><strong>10 inch</strong></p>
+                        <p>rise in Boston Harbor's sea levels.</p>
+                    </td>
+                </tr>
+            </table>
+
+            <p><strong>Work with us to give Boston a brighter future</strong></p>
+        </div>
+    </div>
+
+    <div id="section-three">
+        <div id="left-content-section-three">
+            <p><strong>
+                "There is something infinitely healing in the repeated refrains of
+                nature--the assurance that dawn comes after night, and spring after 
+                winter"
+            </strong></p>
+
+            <p>-Rachel Carson's <i>Silent Spring</i></p>
+        </div>
+
+        <div id="events-popup">
+            <h2>Upcoming Events</h2>
+
+            <p>
+                <strong>March 3, 2025</strong><br>
+                10:00am - 12:00pm <br>
+                Boston Commons trash cleanup
+            </p>
+
+            <p>
+                <strong>March 20, 2025</strong><br>
+                1:00pm - 3:00pm <br>
+                Neighborhood tree planting day
+            </p>
+
+            <p>
+                <strong>June 12, 2025</strong><br>
+                10:00am - 3:00pm <br>
+                Community garden workshops
+            </p>
+
+            <p>
+                <strong>July 3, 2025</strong><br>
+                9:00am - 12:00pm <br>
+                E-waste collection day
+            </p>
+
+            <p>
+                <strong>July 12, 2025</strong><br>
+                10:00am - 4:00pm <br>
+                Community biking day
+            </p>
+
+            <p>
+                <strong>August 11, 2025</strong><br>
+                11:00am - 1:00pm <br>
+                Boston Commons trash cleanup
+            </p>
+        </div>
+    </div>
+
+    <div id="section-four">
+        <h2>Latest Highlights</h2>
+        <div id="highlights">
+            <div class="highlight-text" id="highlight-1">
+                Our sustainable recycling initiative has spurned the creation of 5 new recycling facilities across Boston
+            </div>
+
+            <div class="highlight-text" id="highlight-2">
+                Transformed 15 vacant lots into vibrant community gardens and green spaces
+            </div>
+
+            <div class="highlight-text" id="highlight-3">
+                Installed 300 public recycling bins in high-traffic areas, increasing recycling rates by 40%
+            </div>
+        </div>
+    </div>
+
+    <div id="section-five">
+        <img src="images/greenifybostonwave.svg"/>
+
+        <div id="content-section-five">
+            <h2>Subscribe to our newsletter</h2>
+            <p>Stay up to date with the latest news from Greenify Boston</p>
+            <input type="text" placeholder="Enter email here"/>
+            <p id="submit-button-section-five">Submit</p>
+        </div>
+    </div>
     <!-- PUT CONTENT HERE -->
 
 
@@ -79,7 +410,7 @@
     <!-- FOOTER -->
     <div id="footer">
         <div id="footer-left-content">
-            <a id="footer-logo" href="index.html"><img src="greenifybostonlogo.svg"/></svg></a> 
+            <a id="footer-logo" href="index.html"><img src="images/greenifybostonlogo.svg"/></a> 
 
             <p>
                 <strong style="font-size: 18px; font-family: 'DM Serif Display', serif;">Greenify Boston</strong>
