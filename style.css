@@ -182,6 +182,7 @@ ul#mnav {
     }
     
     ul#mnav #mnav-bottom {
+        z-index: 5;
         display: none;
         text-align: right;
         position: absolute;
