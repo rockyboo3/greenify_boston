@@ -168,6 +168,7 @@ ul#mnav {
         list-style-type: none;
         padding-left: 0;
         margin-top: 0;
+        margin-bottom: 0;
         z-index: 5;
     }
     
