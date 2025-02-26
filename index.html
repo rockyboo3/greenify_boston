@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <script>
-        currIndex = 1;
         window.onload = function() {
             document.getElementById("hamburger-menu").addEventListener("click", () => {
                 var bottomLinks = document.getElementById("mnav-bottom");
@@ -20,17 +19,18 @@
                 }
             });
 
-            slideshowAnimation();
-
-            function slideshowAnimation() {
-                $('#slideshow-image').fadeTo(4000, 0.5, () => {
-                    currIndex = currIndex == 5 ? 1 : currIndex + 1;
-                    $('#slideshow-image').attr("src", 'images/slider-image-' + currIndex + ".jpg");
-                    $('#slideshow-image').fadeTo(4000, 1);
-                    setTimeout(slideshowAnimation, 4000);
-                });
-            }
+            setInterval('cycleImages()', 4000);
         };
+
+        function cycleImages(){
+            var $active = $('#cycler .active');
+            var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+            $next.css('z-index', 2); //move the next image up the pile
+            $active.fadeOut(1500, function(){ //fade out the top image
+            $active.css('z-index', 1).show().removeClass('active'); //reset the z-index and unhide the image
+                $next.css('z-index', 3).addClass('active'); //make the next image the top one
+            });
+        }
 
     </script>
 
@@ -62,14 +62,23 @@
             font-size: 20px;
         }
 
-        #slideshow {
-            width: 100%;
-        }
-
-        #slideshow-image {
+        #cycler {
+            position: relative;
             width: 100%;
             height: 100%;
+            overflow: hidden;
+        }
+
+        #cycler img {
+            position: absolute;
+            z-index: 1;
+            height: 90vh;
+            width: 100%;
             object-fit: cover;
+        }
+
+        #cycler img.active {
+            z-index: 3;
         }
 
         #learn-more-button {
@@ -185,6 +194,7 @@
             max-width: 300px;
             border-left: 3px solid white;
             padding-left: 10px;
+            margin: 12px;
         }
 
         #section-five {
@@ -231,6 +241,63 @@
         #submit-button-section-five:hover {
             background-color:#A7C6DA;
             cursor: pointer;
+        }
+
+        @media (max-width: 1140px) {
+            #section-three {
+                height: fit-content;
+                flex-direction: column;
+                padding-bottom: 40px;
+                margin-bottom: -2px;
+            }
+
+            #events-popup {
+                margin: 0 auto !important;
+                
+            }
+
+            
+        }
+
+        @media (max-width: 1020px) {
+            #cycler {
+                display: none;
+            }
+
+            #left-content-section-one {
+                max-width: 100%;
+            }
+
+            #left-content-section-one h1 {
+                text-align: center;
+            }
+
+            #section-four #highlights {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            #section-five input {
+                width: 98% !important;
+                
+            }
+        }
+
+        @media (max-width: 750px) {
+            #section-four #highlights {
+                flex-direction: column;
+                
+            }
+
+            #section-four #highlights .highlight-text {
+                margin-bottom: 20px;
+                max-width: 100%;
+            }
+
+            #section-four h2 {
+                text-align: center;
+            }
         }
     </style>
     
@@ -294,8 +361,16 @@
             <a href="about.html"><p id="learn-more-button">Learn More</p></a>
         </div>
 
-        <div id="slideshow">
+        <!-- <div id="slideshow">
             <img id="slideshow-image" src="images/slider-image-4.jpg"/>
+        </div> -->
+
+        <div id ="cycler">
+            <img class="active" src="images/slider-image-4.jpg"/>
+            <img src="images/slider-image-1.jpg"/>
+            <img src="images/slider-image-2.jpg"/>
+            <img src="images/slider-image-3.jpg"/>
+            <img src="images/slider-image-5.jpg"/>
         </div>
     </div>
 
