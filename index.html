@@ -487,41 +487,20 @@
         <div id="events-popup">
             <h2>Upcoming Events</h2>
 
-            <p>
-                <strong>March 3, 2025</strong><br>
-                10:00am - 12:00pm <br>
-                Boston Commons trash cleanup
-            </p>
+            <script>
+                // get data from NON-LOCAL json file
+                $.get("https://rockyboo3.github.io/greenify_boston/upcomingevents.json", data => {
+                    data["events"].forEach(event => {
 
-            <p>
-                <strong>March 20, 2025</strong><br>
-                1:00pm - 3:00pm <br>
-                Neighborhood tree planting day
-            </p>
-
-            <p>
-                <strong>June 12, 2025</strong><br>
-                10:00am - 3:00pm <br>
-                Community garden workshops
-            </p>
-
-            <p>
-                <strong>July 3, 2025</strong><br>
-                9:00am - 12:00pm <br>
-                E-waste collection day
-            </p>
-
-            <p>
-                <strong>July 12, 2025</strong><br>
-                10:00am - 4:00pm <br>
-                Community biking day
-            </p>
-
-            <p>
-                <strong>August 11, 2025</strong><br>
-                11:00am - 1:00pm <br>
-                Boston Commons trash cleanup
-            </p>
+                        // add each event in the json to the popup
+                        $("#events-popup").append(
+                            '<p><strong>' + event["date"] + '</strong><br>' +
+                            event["time"] + '<br>' +
+                            event["description"] + '</p>'
+                        );
+                    })
+                });
+            </script>
         </div>
     </div>
 
