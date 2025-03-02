@@ -10,7 +10,7 @@
     <script>
         window.onload = function() {
             document.getElementById("hamburger-menu").addEventListener("click", () => {
-                var bottomLinks = document.getElementById("mnav-bottom");
+                bottomLinks = document.getElementById("mnav-bottom");
 
                 if (bottomLinks.style.display == "none") {
                     bottomLinks.style.display = "block";
@@ -24,8 +24,8 @@
 
        // implements the slideshow on the front page 
         function cycleImages(){
-            var $active = $('#cycler .active');
-            var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+            $active = $('#cycler .active');
+            $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
             $next.css('z-index', 2); // move the next image up the pile
             $active.fadeOut(1500, function(){ // fade out the top image
             $active.css('z-index', 1).show().removeClass('active'); // reset the z-index and unhide the image
