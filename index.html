@@ -108,6 +108,7 @@
         #section-two-content {
             color: white;
             font-size: 26px;
+            margin: 0 20px;
         }
 
         #section-two-content #stats-table {
@@ -277,6 +278,13 @@
             }
         }
 
+        @media (max-width: 830px) {
+            #section-two #stats-table tr {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
         @media (max-width: 800px) {
             #section-five input {
                 width: 98% !important;
@@ -297,6 +305,48 @@
 
             #section-four h2 {
                 text-align: center;
+            }
+        }
+
+        @media (max-width: 660px) {
+            #section-two h2 {
+                font-size: 28px;
+            }
+
+            #section-two-content {
+                font-size: 22px;
+            }
+
+            #stats-table .stat-number {
+                font-size: 28px;
+            }
+
+            #section-three #left-content-section-three {
+                font-size: 20px;
+            }
+
+            #section-four h2 {
+                font-size: 28px;
+            }
+
+            #section-five #content-section-five h2 {
+                margin-top: 80px;
+                font-size: 28px;
+            }
+
+            #section-one h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            #section-one h1 {
+                font-size: 32px;
+            }
+            
+            #section-three #events-popup {
+                width: auto;
+                max-width: 360px;
             }
         }
     </style>
@@ -360,10 +410,6 @@
 
             <a href="about.html"><p id="learn-more-button">Learn More</p></a>
         </div>
-
-        <!-- <div id="slideshow">
-            <img id="slideshow-image" src="images/slider-image-4.jpg"/>
-        </div> -->
 
         <div id ="cycler">
             <img class="active" src="images/slider-image-4.jpg"/>
