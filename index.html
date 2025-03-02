@@ -246,6 +246,10 @@
             cursor: pointer;
         }
 
+        #submit-message {
+            height: 24px;
+        }
+
         @media (max-width: 1140px) {
             #section-three {
                 height: fit-content;
@@ -527,10 +531,34 @@
         <div id="content-section-five">
             <h2>Subscribe to our newsletter</h2>
             <p>Stay up to date with the latest news from Greenify Boston</p>
-            <input type="text" placeholder="Enter email here"/>
+            <input id="email-input" type="text" placeholder="Enter email here"/>
             <p id="submit-button-section-five">Submit</p>
+            <p id="submit-message"></p>
         </div>
     </div>
+
+    <script>
+
+        // form validation for entering an email for the newsletter
+        $('#submit-button-section-five').click(() => {
+            $('#email-input').attr('placeholder', 'Enter email here');
+            userInput = $('#email-input').val();
+            message = "";
+            
+            // if user does not follow email format (here, defined by using an @ and a . and no spaces)    
+            // also handles if user inputs nothing
+            if (!(userInput.includes('@') && userInput.includes('.') && !userInput.trimEnd().includes(" "))){
+                message = "Please enter a valid email and try again."
+            
+            // if the user enters a valid email
+            } else {
+                $('#email-input').attr('placeholder', 'Thank you for submitting your email!');
+            }
+
+            $('#email-input').val("");
+            $('#submit-message').html(message);
+        });
+    </script>
 
     <!-- FOOTER -->
     <div id="footer">
