@@ -1,0 +1,257 @@
+body, html {
+    font-family: "Montserrat", serif;
+    margin: 0px;
+}
+
+a { 
+    text-decoration: none; 
+}
+
+.general_hover:hover {
+    opacity: 0.8;
+}
+
+ul#nav {
+    top: 0;
+    font-size: 14px;
+    list-style-type: none;
+    background-color: #243010;
+    padding: 20px 40px 0px 40px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0;
+    margin-top: 0;
+    z-index: 5;
+}
+  
+.dropdown {
+    z-index: 5;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #9EB25D;
+    width: 140px;
+    margin-top: 33px;
+}
+
+.dropdown-content li {
+    margin: 0  !important;
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li:hover {
+    background-color: #ffffff;
+}
+
+.dropdown-content li:hover a {
+    color: #9EB25D !important;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+ul#nav #nav-left {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4px;
+}
+
+ul#nav #nav-left li a {
+    font-family: "DM Serif Display", serif;
+    font-size: 18px;
+}
+
+ul#nav #nav-left a img {
+    width: 60px; 
+    height: auto; 
+    margin-top: -16px !important;
+}
+
+ul#nav #nav-right {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+ul#nav li {
+    margin: 0 10px;
+}
+
+ul#nav li a {
+    color: #ffffff;
+}
+
+#footer {
+    background-color: #291514;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 14px;
+}
+
+#footer #footer-left-content {
+    display: flex;
+    flex-direction: row;
+    width: 240px;
+    padding: 20px;
+    margin-top: -12px;
+}
+
+#footer-logo img {
+    margin-right: 10px;
+    margin-top: 2px;
+    width: 80px; 
+    height: auto;
+}
+
+#footer p {
+    color:#ffffff;
+}
+
+#footer #footer-right-content {
+    padding: 20px 20px 20px 20px;
+}
+
+#footer #footer-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+#footer #footer-joinourteam {
+    margin-right: 20px;
+    background-color: #ffffff;
+    color:#291514 !important;
+    padding: 8px 24px;
+    border-radius: 16px;
+}
+
+#footer #footer-joinourteam:hover {
+    background-color: #467594;
+    color:#ffffff !important;
+}
+
+#footer #footer-donate {
+    background-color: #ffffff;
+    color:#291514 !important;
+    padding: 8px 24px;
+    border-radius: 16px;
+}
+
+#footer #footer-donate:hover {
+    background-color: #467594;
+    color:#ffffff !important;
+}
+
+ul#mnav {
+    display: none;
+}
+
+@media (max-width: 670px) {
+    ul#nav {
+        display: none;
+    }
+
+    ul#mnav {
+        display: block;
+        width: 100%;
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        z-index: 5;
+    }
+    
+    ul#mnav #mnav-top {
+        margin-left: 0;
+        background-color: #243010;
+        padding: 14px 40px 14px 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    ul#mnav #mnav-bottom {
+        z-index: 5;
+        display: none;
+        text-align: right;
+        position: absolute;
+        right: 10px;
+    }
+    
+    ul#mnav #mnav-bottom .mnav-text-element {
+        background-color: #9EB25D;
+        padding: 12px 10px;
+        width: 140px;
+        font-size: 14px;
+    }
+    
+    ul#mnav #mnav-bottom .mnav-text-element:hover {
+        background-color: #ffffff;
+    }
+    
+    ul#mnav #mnav-bottom .mnav-text-element:hover a {
+        color: #9EB25D;
+    }
+    
+    ul#mnav #mnav-right #hamburger-menu {
+        cursor: pointer;
+        width: 20px; 
+        margin-top: -8px; 
+        margin-right: 10px;
+    }
+
+    ul#mnav #mnav-left {
+        display: flex;
+        flex-direction: row;
+    }
+
+    ul#mnav #mnav-left li a {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+    }
+
+    ul#mnav #mnav-left li {
+        margin-top: 12px;
+    }
+
+    ul#mnav #mnav-left a img {
+        width: 50px; 
+        height: auto; 
+    }
+    
+    ul#mnav #mnav-right {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    ul#mnav li {
+        margin: 0 10px;
+    }
+    
+    ul#mnav li a {
+        color: #ffffff;
+    }
+
+    #footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        width: 100%;
+        height: fit-content;
+    }
+
+    #footer #footer-left-content {
+        padding-bottom: 0px;
+    }
+}
