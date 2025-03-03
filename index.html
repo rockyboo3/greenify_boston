@@ -22,6 +22,99 @@
     </script>
 
     <style type="text/css">
+        html, body {
+            color: #291514;
+            background-color: #467594;
+        }
+
+        h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: 38px;
+            color: white;
+            text-align: center; 
+            margin-top: 60px;
+        }
+
+        #header-subtext {
+            color: white;
+            text-align: center; 
+            margin: 0 40px;
+        }
+        
+        #form-section {
+            max-width: 750px;
+            margin: 0 auto;
+            border-radius: 16px;
+            background-color: white;
+            padding: 20px 10px;
+            margin-bottom: 80px;
+            margin-top: 40px;
+        }
+
+        #form-section strong {
+            font-size: 18px;
+        }
+
+        input {
+            margin-bottom: 12px;
+            font-family: "Montserrat", serif;
+        }
+
+        input[type=text], input[type=tel], input[type=email] {
+            width: 170px;
+        }
+
+        input[type=date] {
+            width: 173px;
+        }
+
+        #notesandqs {
+            width: 100%; 
+            height: 200px;
+            resize: none;
+        }
+
+        #submit-button-wrapper #submit-button {
+            background-color: #291514;
+            color:#fffdf8;
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #form-section label {
+            display: inline-block;
+            width: 150px;
+        }
+
+        #form-section .requiredLabel:before {
+            content: "*";
+            color: #467594;
+        }
+
+        #availabilityCheckboxes {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #availabilityCheckboxes label {
+            width: 220px;
+        }
+
+        @media (max-width: 800px) {
+            #form-section {
+                margin-right: 16px;
+                margin-left: 16px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            input[type=text], input[type=date], input[type=tel], input[type=email] {
+                width: 100%;
+            }
+        }
     </style>
     
 </head>
@@ -70,11 +163,132 @@
         </div>     
     </ul>
 
+    <h1>Join Our Team</h1>
+    <p id="header-subtext">
+        Interested in joining our Boston-based volunteer team? Fill out the form below!
+    </p>
+    
+    <div id="form-section">
+        <p style="text-align: center;">
+            <strong style="padding: 0 10px;">Thank you for your interest in volunteering with Greenify Boston.</strong>
+            <br><br>
+            <i style="color:#467594">Note, fields marked with * are required.</i>
+        </p>
+        <form action="#" id="interest-form" style="padding: 20px;">
+            <strong>Contact information</strong>
+                <br><br>
+                <label for="name" class="requiredLabel">Name: </label>
+                <input type="text" id="name" name="name" class="required"> 
 
+                <br>
+                <label for="date" class="requiredLabel">Date: </label>
+                <input type="date" id="date" name="date" class="required"> 
+                <br>
 
-    <!-- PUT CONTENT HERE -->
+                <label for="address" class="requiredLabel">Home Address: </label>
+                <input type="text" id="address" name="address" class="required">
+                <br>
 
+                <label for="phonenum" class="requiredLabel">Phone Number: </label>
+                <input type="tel" id="phonenum" name="phonenum" class="required" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                <br>
 
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email">
+                <br>
+
+                <label for="dob" class="requiredLabel">Date of Birth: </label>
+                <input type="date" id="dob" name="dob" class="required">
+                <br>
+                
+                <label style="width: 200px;" class="requiredLabel">Valid Driver's License: </label>
+                <br>
+                <input type="radio" id="yeslicense" name="license" value="yes">
+                <label for="yeslicense" style="width: 60px;">yes</label>
+                <input type="radio" id="nolicense" name="license" value="no">
+                <label for="nolicense" style="width: 60px;">no</label>
+                <br><br><br>
+
+            <strong>Emergency Contact Information</strong>
+                <br><br>
+                <label for="emergencyname" class="requiredLabel">Name: </label>
+                <input type="text" id="emergencyname" name="emergencyname" class="required"> 
+
+                <br>
+                <label for="relationship" class="requiredLabel">Relationship: </label>
+                <input type="text" id="relationship" name="relationship" class="required"> 
+                <br>
+
+                <label for="emergencyphone" class="requiredLabel">Phone Number: </label>
+                <input type="tel" id="emergencyphone" name="emergencyphone" class="required" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                <br>
+
+                <label for="emergencyaddress" class="requiredLabel">Primary Address: </label>
+                <input type="text" id="emergencyaddress" name="emergencyaddress" class="required"> 
+                <br><br><br>
+
+            <strong>Availability (EST)</strong>
+                <br><br>
+                <div id="availabilityCheckboxes">
+                    <div>
+                        <input type="checkbox" id="sundays" name="sundays" value="sundays">
+                        <label for="sundays">Sundays, 10am-4pm</label>
+                    </div>
+                    <br>
+                    <div>
+                        <input type="checkbox" id="mondays" name="mondays" value="mondays">
+                        <label for="mondays">Mondays, 9am-5pm</label>
+                    </div>
+                    <br>
+                    <div>
+                        <input type="checkbox" id="tuesdays" name="tuesdays" value="tuesdays">
+                        <label for="tuesdays">Tuesdays, 9am-5pm</label>
+                    </div>
+                    <br>
+                    <div>
+                        <input type="checkbox" id="wednesdays" name="wednesdays" value="wednesdays">
+                        <label for="wednesdays">Wednesdays, 9am-5pm</label>
+                    </div>
+                    <br>
+                    <div>
+                        <input type="checkbox" id="thursdays" name="thursdays" value="thursdays">
+                        <label for="thursdays">Thursdays, 9am-5pm</label>
+                    </div>
+                    <br>
+                    <div>
+                        <input type="checkbox" id="fridays" name="fridays" value="fridays">
+                        <label for="fridays">Fridays, 9am-5pm</label>
+                    </div>
+                    <br>
+                    <div>
+                        <input type="checkbox" id="saturdays" name="saturdays" value="saturdays">
+                        <label for="saturdays">Saturdays, 10am-4pm</label>
+                    </div>        
+                </div>
+                <br><br>
+
+                <label for="startdate" class="requiredLabel">Start Date: </label>
+                <input type="date" id="startdate" name="startdate" class="required">
+                <br>
+
+                <label for="enddate">End Date (leave blank if unsure): </label>
+                <input type="date" id="enddate" name="enddate">
+                <br><br><br>
+
+            <strong>Additional Comments</strong>
+                <br><br>
+                <label for="notesandqs" style="width: 100%;">Please use the provided space for any questions or additional notes: </label>
+                <br>
+                <textarea id="notesandqs" name="notesandqs"></textarea> 
+                <br><br><br>
+            
+            <div id="submit-button-wrapper" style="text-align: center;">
+                <label style="width: 100%;">Please confirm all information is correct before submitting.</label>
+                <br><br>
+                <input id="submit-button" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
 
     <!-- FOOTER -->
     <div id="footer">
