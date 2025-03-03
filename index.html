@@ -64,6 +64,69 @@
             margin: 0 auto;
         }
 
+        #section-two {
+            padding: 40px;
+            display: flex;
+            flex-direction: row;
+            max-width: 750px;
+            margin: 0 auto;
+            justify-content: space-between;
+            color: #291514;
+        }
+
+        #section-two #message-us-section {
+            max-width: 300px;
+        }
+
+        #section-two #message-us-section h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: 32px;
+        }
+
+        #section-two #contact-details-section input,  #section-two #contact-details-section textarea{
+            width: 300px;
+            font-family: "Montserrat", serif;
+        }
+
+        #section-two #submit-button {
+            width: fit-content;
+            padding: 10px 30px;
+            background-color: #9EB25D;
+            color: white;
+            border-radius: 20px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        #section-two #submit-button:hover {
+            cursor: pointer;
+            background-color: #243010;
+        }
+
+        #section-two #message-us-section p {
+            margin-top: -12px;
+        }
+
+        @media (max-width: 730px) {
+            #section-two {
+                flex-direction: column;
+                width: fit-content;
+                margin: 0 auto;
+            }
+
+            #section-two #message-us-section {
+                text-align: center;
+            }
+
+            #section-two #message-us-section p {
+                margin-bottom: 60px;
+            }
+
+            #section-two #contact-details-section input,  #section-two #contact-details-section textarea{
+                width: 100%;
+            }
+        }
+
         @media (max-width: 690px) {
             #section-one {
                 height: fit-content;
@@ -181,8 +244,40 @@
         </div>
 
         <div id="contact-details-section">
-            
+            <label for="name">Name</label>
+            <br>
+            <input class="textbox" type="text" id="name" name="name"> 
+            <br><br>
+            <label for="name">Email</label>
+            <br>
+            <input class="textbox" type="email" id="email" name="email"> 
+            <br><br>
+            <label for="name">Message</label>
+            <br>
+            <textarea class="textbox" type="text" id="message" name="message" style="height: 120px; resize: none;"></textarea>
+        
+            <p id="submit-button">Submit</p>
+
+            <p id="submit-message" style="height: 40px; width: 220px; text-align: center; margin: 0 auto; margin-top: 20px;"></p>
         </div>
+
+        <script>
+            // input validation for contact message
+            $('#submit-button').click(() => {
+                message = "";
+                if ($('#name').val().trim() == "" || $("input[type = 'email']").val().trim() == "" || $('#message').val().trim() == "") {
+                    message = "Please fill out all areas before submitting.";
+                } else {
+                    message = "Thank you for submitting a message!";              
+                }
+
+                $('#name').val("");
+                $("input[type = 'email']").val("");
+                $('#message').val("");
+                $('#submit-message').html(message);
+                $('#submit-message').css('font-style', 'italic');
+            });
+        </script>
     </div>
 
     <!-- FOOTER -->
