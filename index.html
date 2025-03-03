@@ -1,17 +1,522 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Greenify Boston</title>
+    <title>Greenify Boston-Homepage</title>
     <meta name='viewport' content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+        window.onload = function() {
+            document.getElementById("hamburger-menu").addEventListener("click", () => {
+                var bottomLinks = document.getElementById("mnav-bottom");
+
+                if (bottomLinks.style.display == "none") {
+                    bottomLinks.style.display = "block";
+                } else {
+                    bottomLinks.style.display = "none";
+                }
+            });2
+        };
+    </script>
 
     <style type="text/css">
     </style>
-        
-    <script>
-    </script>
+    <style>
+        .parallax {
+            background-image: url("backgroundSuper.jpg");
+            overflow: hidden;
+            height: 600px;
+
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        img {
+            width: 100%;  
+        }
+        .titleBox {
+            background-color: white;
+            opacity: 50%;
+            width: 350px;
+            height: 100px;
+            display: flex;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%);
+            justify-content: center;
+            align-items: center;
+        }
+        .missionContainer {
+            height: 330px;
+            background-color: #A7C6DA;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+        }
+        .missionText {
+            margin-right: 5%;
+            width: 45%;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .missionTitle {
+            padding: 25px;
+            width: 40%;
+            color: white;
+            text-align: right;
+            height: 55px;
+            position: relative;
+            z-index: 10;
+        }
+        .missionCity {
+            top: -90px;
+            margin-left: -20px;
+            height: 300px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        @media(max-width:840px) {
+            .leadersContainer {
+                height: 1400px;
+            }
+            h3 {
+                font-size: 20px !important;
+            }
+            h4 {
+                font-size: 18px !important;
+            }
+            .missionContainer {
+                flex-direction: column;
+                height: 600px;
+                gap: 0px;
+            }
+            .missionText {
+                width: 95%;
+                margin: 2.5%;
+                margin-top: -5%;
+                
+            }
+            .missionTitle {
+                width: 95%;
+                margin: 2.5%;
+                margin-top: 0%;
+                text-align: center;
+                padding: 0px;
+            }
+            .missionCity {
+                top: 200px;
+            }
+        }
+
+        .accomplishmentsContainer {
+            height: 350px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .leadersContainer {
+            height: 700px;
+            background-color: #467594;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+        .leaders {
+            display: flex;
+            margin-left: 10%;
+            margin-right: 10%;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .title {
+            text-align: center;
+        }
+        .person {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .person img {
+            width: 100%;
+            height: auto;
+            
+        }
+        @media(max-width: 1000px) {
+            h3 {
+                font-size: 22px !important;
+            }
+            h4 {
+                font-size: 19px !important;
+            }
+            h5 {
+                font-size: 16px !important;
+            }
+            .leftTree {
+                right: 0% !important;
+            }
+            .rightTree {
+                left: 0% !important;
+            }
+        }
+        @media(max-width:600px)
+        {
+            .person img {
+                width: 200px;
+                height: auto;
+            }
+            .leadersContainer {
+                height: 1000px;
+            }
+            h4 {
+                font-size: 17px !important;
+            }
+
+
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+        h2 {
+            font-size: 40px;
+            font-family: 'DM Serif Display', serif;
+            margin-top: 0px;
+            padding-top: 0px;
+            position: relative;
+            z-index: 10;
+        }
+        h3 {
+            font-size: 25px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        h4 {
+            font-size: 20px;
+            font-family: "Montserrat", serif;
+            font-weight: 400;
+        }
+        h5 {
+            font-family: "Montserrat", serif;
+            font-weight: 400;
+            font-size: 17px;
+        }
+        .slideshow {
+            border: 12px solid #9EB25D;
+            height: 50%;
+            width: 75%;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .arrow {
+            border: solid #000000;
+            border-width: 0 6px 6px 0;
+            display: inline-block;
+            padding: 3px;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+        }
+        .arrow:hover {
+            border: solid grey;
+            border-width: 0 8px 8px 0;
+
+        }
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            margin-left: 66%;
+        }
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            margin-right: 66%;
+        }
+        .textBox {
+            width: 75%;
+            text-align: center;
+        }
+        .city {
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+        .leftTree {
+            position: absolute;
+            width: 200px;
+            z-index: 3;
+            right: 10%;
+            bottom: -10px;
+
+        }
+        .rightTree {
+            position: absolute;
+            width: 200px;
+            left: 10%;
+            bottom: -10px;
+            z-index: 3;
+        }
+
+    </style>
+    
 </head>
 <body>
+    <!-- NAVBAR USED FOR BIGGER DEVICES -->
+    <ul id="nav">
+        <div id="nav-left">
+            <a href="index.html"><img src="greenifybostonlogo.svg"/></a> 
+            <li><a href="index.html">Greenify Boston</a></li>   
+        </div>
+
+        <div id="nav-right">
+            <div class="dropdown">
+                <li id="nav-contribute" class="nav-text-element dropbtn"><a class="general_hover" href="contribute.html">Contribute</a></li>
+                <div class="dropdown-content">
+                    <li id="nav-donate" class="nav-text-element"><a href="donate.html">Donate</a></li>
+                    <li id="nav-joinourteam" class="nav-text-element"><a href="joinourteam.html">Join Our Team</a></li>
+                </div>
+            </div>
+            <li id="nav-about" class="nav-text-element"><a class="general_hover" href="about.html">About</a></li>
+            <li id="nav-contact" class="nav-text-element"><a class="general_hover" href="contact.html">Contact</a></li>
+            <li id="nav-faqs" class="nav-text-element"><a class="general_hover" href="faqs.html">FAQs</a></li>
+        </div>
+    </ul>
+
+    <!-- NAVBAR USED FOR SMALLER DEVICES -->
+    <ul id="mnav">
+        <div id ="mnav-top">
+            <div id="mnav-left">
+                <a href="index.html"><img src="greenifybostonlogo.svg"/></a> 
+                <li><a href="index.html">Greenify Boston</a></li>   
+            </div>
     
+            <div id="mnav-right">
+                <svg id="hamburger-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#fffdf8" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+            </div>
+        </div>
+
+        <div style="display: none;" id="mnav-bottom">
+            <li id="mnav-contribute" class="mnav-text-element"><a class="general_hover" href="contribute.html">Contribute</a></li>
+            <li id="mnav-donate" class="mnav-text-element"><a href="donate.html">Donate</a></li>
+            <li id="mnav-joinourteam" class="mnav-text-element"><a href="joinourteam.html">Join Our Team</a></li>
+            <li id="mnav-about" class="mnav-text-element"><a class="general_hover" href="about.html">About</a></li>
+            <li id="mnav-contact" class="mnav-text-element"><a class="general_hover" href="contact.html">Contact</a></li>
+            <li id="mnav-faqs" class="mnav-text-element"><a class="general_hover" href="faqs.html">FAQs</a></li>
+        </div>     
+    </ul>
+
+
+
+    <div class="parallax">
+        <div class="imgSection">
+        </div>
+        <div class="titleBox">
+            <h1>About Us</h1>
+        </div>
+    </div>
+    <div class="missionContainer">
+        <div class="missionTitle">
+            <div>
+                <h2>Our Mission</h2>
+            </div>
+            <div class="missionCity">
+                <img class="leftTree" src="tree.png">
+                <img class="city" src="city.png">
+                <img class="rightTree" src="tree.png">
+            </div>
+        </div>
+        <div class="missionText">
+            <h5>Greenify Boston is dedicated to creating a cleaner, greener, and more sustainable city through 
+                direct action, community engagement, and policy advocacy.<br><br> 
+            We plant trees, clean up public spaces, push for stronger environmental legislation, 
+                and hold corporations accountable for their impact on our planet. <br><br>
+            By empowering volunteers and working alongside local leaders, we strive to 
+                make Boston a model for urban sustainability—one tree, one cleanup, and one policy at a time.<br><br>
+            </h5>
+        </div>
+    </div>
+    <div class="accomplishmentsContainer">
+        <div class="textContainer">
+            <h2>
+                Our Accomplishments
+            </h2>
+        </div>
+        <div class="slideshow">
+            <div class="arrow left" id="leftArrow">
+                
+            </div>
+            <div class="textBox">
+                <div class="AccHeader" id="AccHeader">
+                
+                </div>
+                <div class="AccText" id="AccText">
+                    
+                </div>
+            </div>
+            <div class="arrow right" id="rightArrow">
+                
+            </div>
+            <script>
+                let accomplishTitles = ["Planted 10,000+ Trees", "Removed Over 500,000 Pounds of Trash", 
+                    "Helped Pass the Boston Green Business Act", "Restored the Charles River Shoreline",
+                    "Held Major Corporations Accountable", "Mobilized 50,000+ Advocates", "Expanded Boston's Composting Program",
+                    "Transformed Abandoned Lots into Green Spaces", "Stopped a Polluting Power Plant Expansion", 
+                    "Advocated for Greener Public Transit"
+                ];
+                let accomplishText = ["Increased Boston's urban canopy by planting trees in underserved neighborhoods, improving air quality and reducing heat islands.", 
+                    "Organized citywide cleanup events that cleared parks, streets, and waterways of litter and pollution.", 
+                    "Successfully lobbied for legislation that requires businesses to reduce carbon emissions and adopt sustainable practices.",                        "Led a volunteer initiative to clean and revitalize sections of the Charles River, bringing back local wildlife and improving water quality.",
+                    "Launched campaigns that pushed local businesses and large corporations to commit to sustainable waste disposal and carbon reduction goals.",
+                    "Built a grassroots movement that has petitioned lawmakers, attended city hall meetings, and fought for stronger environmental policies.",
+                    "Worked with the city to introduce and expand community composting stations, reducing food waste and emissions.",
+                    "Converted vacant, neglected spaces into thriving community gardens and urban forests.", 
+                    "Successfully campaigned against a proposed industrial expansion that would have increased air pollution in Boston's most vulnerable neighborhoods.", 
+                    "Partnered with local transit authorities to push for more bike lanes, electric buses, and pedestrian-friendly infrastructure."
+                ];
+                $(document).ready( function() {
+                    let index = 0;
+                    document.getElementById("AccHeader").innerHTML = "<h3>" + accomplishTitles[index] + "</h3>";
+                    document.getElementById("AccText").innerHTML = "<h4>" + accomplishText[index] + "</h4>";
+                    $("#rightArrow").click( function() {
+                        move("right");
+                    });
+                    $("#leftArrow").click( function() {
+                        move("left");
+                    });
+
+                    function move(direction) {
+                        if(direction == "left") {
+                            index--;
+                        } else {
+                            index++;
+                        }
+                        if(index > 9) {
+                            index = 0;
+                        } else if(index < 0) {
+                            index = 9;
+                        }
+                        document.getElementById("AccHeader").innerHTML = "<h3>" + accomplishTitles[index] + "</h3>";
+                        document.getElementById("AccText").innerHTML = "<h4>" + accomplishText[index] + "</h4>";
+                    }
+
+                    setInterval(function() {
+                        move();
+                    }, 3000);
+
+
+                });
+            </script>
+        </div>
+    </div>
+    <div class="leadersContainer">
+        <div class="title" style="padding-top: 50px;">
+            <h2>Our Leaders</h2>
+        </div>
+        <div class="leadershipContainer" id="leadershipContainer">
+            <script>
+                let imagesSrc = ["annika.jpg", "christina.jpg", "linkedin.jpg", "itay.jpg"];
+                let names = ["Isabella Cruz", "Talia Gray", "Mark Caldwell", "Omar Haddad"];
+                let titles = ["Executive Director", "Policy Coordinator", "Finance Manager", "Sustainability Lead"];
+                let width = window.innerWidth;
+                resize(width);
+
+                window.addEventListener('resize', function() {
+                    let width = window.innerWidth;
+                    resize(width);
+                });
+                function resize(width) {
+                    leadershipContainer.innerHTML = ""; 
+                    if(width > 900) {
+                        resizeLargeWindow();
+                    } else if(width <= 900) {
+                        resizeSmallWindow();
+                    }
+                }
+                function resizeLargeWindow() {
+                    let leadershipContainer = document.getElementById("leadershipContainer");
+                    let newLeaders = document.createElement("div");
+                    newLeaders.id = "leaders";
+                    newLeaders.className = "leaders";
+                    leadershipContainer.appendChild(newLeaders);
+                    for(let i = 0; i < 4; i++) {
+                        let leaders = document.getElementById("leaders");
+                        let newPerson = document.createElement("div");
+                        newPerson.id = "person" + i;
+                        newPerson.className = "person";
+                        leaders.appendChild(newPerson);
+                    }
+                    for(let i = 0; i < 4; i++) {
+                        document.getElementById("person" + i).innerHTML = "<img src = " + imagesSrc[i] + "> <h3>" + names[i] + "</h3> <h4>" + titles[i] + "</h4>";
+
+                    }
+                }
+                function resizeSmallWindow() {
+                    for(let i = 0; i < 2; i++) {
+                        let leadershipContainer = document.getElementById("leadershipContainer");
+                        let newLeaders = document.createElement("div");
+                        newLeaders.id = "leaders" + i;
+                        newLeaders.className = "leaders";
+                        leadershipContainer.appendChild(newLeaders);
+                    }
+                    for(let i = 0; i < 2; i++) {
+                        let leaders = document.getElementById("leaders0");
+                        let newPerson = document.createElement("div");
+                        newPerson.id = "person" + i;
+                        newPerson.className = "person";
+                        leaders.appendChild(newPerson);
+                    }
+                    for(let i = 2; i < 4; i++) {
+                        let leaders = document.getElementById("leaders1");
+                        let newPerson = document.createElement("div");
+                        newPerson.id = "person" + i;
+                        newPerson.className = "person";
+                        leaders.appendChild(newPerson);
+                    } 
+                    for(let i = 0; i < 4; i++) {
+                        document.getElementById("person" + i).innerHTML = "<img src = " + imagesSrc[i] + "> <h3>" + names[i] + "</h3> <h4>" + titles[i] + "</h4>";
+
+                    }
+                } 
+            </script>
+            </div>
+        </div>
+            
+    </div>
+    
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <div id="footer-left-content">
+            <a id="footer-logo" href="index.html"><img src="greenifybostonlogo.svg"/></a> 
+
+            <p>
+                <strong style="font-size: 18px; font-family: 'DM Serif Display', serif;">Greenify Boston</strong>
+                <br>
+                Dedicated to making Boston flourish.
+            </p>
+            
+        </div>
+
+        <div id="footer-right-content">
+            <div id="footer-buttons">
+                <a href="joinourteam.html"><p id="footer-joinourteam">Join Our Team</p></a>
+                <a href="donate.html"><p id="footer-donate">Donate</p></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
+
