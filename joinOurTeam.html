@@ -168,7 +168,7 @@
         </div>     
     </ul>
 
-    <h1>Join Our Team</h1>
+    <h1 id="topWords">Join Our Team</h1>
     <p id="header-subtext">
         Interested in joining our Boston-based volunteer team? Fill out the form below!
     </p>
@@ -304,6 +304,8 @@
                 document.getElementById("extraSpace").style.height=extraSpaceHeight + "px";
                 document.getElementById("form-section").innerHTML = innerHTML;
                 document.getElementById("form-section").style = "padding: 30px;"
+                document.getElementById("topWords").style = "margin-top: 125px;"
+                window.scrollTo(0, 0);
             }
             </script>
 
