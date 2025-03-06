@@ -40,7 +40,7 @@
             let qID = "question" + questionObj.qNum;
             $("#generalQs_section").append("<div class='questionBox' id=" + qID + "></div>");
             $("#" + qID).append("<span class='question'>" + questionObj.question + "</span>");
-            $("#" + qID).append("<img src='dropdown_icon.png' alt='dropdown_arrow' class='dropdown_arrows'>");
+            $("#" + qID).append("<img src='images/dropdown_icon.png' alt='dropdown_arrow' class='dropdown_arrows'>");
             $("#" + qID).append("<span class='qAnswer'>" + questionObj.answer + "</span>");
             if (questionObj.isLast) {
                 $("#" + qID).addClass("lastQ");
@@ -51,7 +51,7 @@
             let qID = "question" + questionObj.qNum;
             $("#getInvolvedQs_section").append("<div class='questionBox' id=" + qID + "></div>");
             $("#" + qID).append("<span class='question'>" + questionObj.question + "</span>");
-            $("#" + qID).append("<img src='dropdown_icon.png' alt='dropdown_arrow' class='dropdown_arrows'>");
+            $("#" + qID).append("<img src='images/dropdown_icon.png' alt='dropdown_arrow' class='dropdown_arrows'>");
             $("#" + qID).append("<span class='qAnswer'>" + questionObj.answer + "</span>");
             if (questionObj.isLast) {
                 $("#" + qID).addClass("lastQ");
@@ -62,7 +62,7 @@
             let qID = "question" + questionObj.qNum;
             $("#ourImpactQs_section").append("<div class='questionBox' id=" + qID + "></div>");
             $("#" + qID).append("<span class='question'>" + questionObj.question + "</span>");
-            $("#" + qID).append("<img src='dropdown_icon.png' alt='dropdown_arrow' class='dropdown_arrows'>");
+            $("#" + qID).append("<img src='images/dropdown_icon.png' alt='dropdown_arrow' class='dropdown_arrows'>");
             $("#" + qID).append("<span class='qAnswer'>" + questionObj.answer + "</span>");
             if (questionObj.isLast) {
                 $("#" + qID).addClass("lastQ");
@@ -85,10 +85,10 @@
             $(document).on("click", ".dropdown_arrows", function() { //when arrows are pressed, slide down and show answer
                 $(this).siblings(".question").toggleClass("question_clicked"); //makes the question bold when clicked
                 $(this).siblings(".qAnswer").slideToggle(200);
-                if ($(this).attr("src") == "dropdown_icon.png") {
-                    $(this).attr("src", "uparrow_icon.png");
+                if ($(this).attr("src") == "images/dropdown_icon.png") {
+                    $(this).attr("src", "images/uparrow_icon.png");
                 } else {
-                    $(this).attr("src", "dropdown_icon.png");
+                    $(this).attr("src", "images/dropdown_icon.png");
                 }
             });
         };
@@ -118,7 +118,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-image: url("faq_backgroundTree.png");
+            background-image: url("images/faq_backgroundTree.png");
             background-size: auto 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -247,7 +247,7 @@
     <!-- NAVBAR USED FOR BIGGER DEVICES -->
     <ul id="nav">
         <div id="nav-left">
-            <a href="index.html"><img src="greenifybostonlogo.svg"/></a> 
+            <a href="index.html"><img src="images/greenifybostonlogo.svg"/></a> 
             <li><a href="index.html">Greenify Boston</a></li>   
         </div>
 
@@ -269,7 +269,7 @@
     <ul id="mnav">
         <div id ="mnav-top">
             <div id="mnav-left">
-                <a href="index.html"><img src="greenifybostonlogo.svg"/></a> 
+                <a href="index.html"><img src="images/greenifybostonlogo.svg"/></a> 
                 <li><a href="index.html">Greenify Boston</a></li>   
             </div>
     
@@ -308,7 +308,7 @@
     <!-- FOOTER -->
     <div id="footer">
         <div id="footer-left-content">
-            <a id="footer-logo" href="index.html"><img src="greenifybostonlogo.svg"/></a> 
+            <a id="footer-logo" href="index.html"><img src="images/greenifybostonlogo.svg"/></a> 
 
             <p>
                 <strong style="font-size: 18px; font-family: 'DM Serif Display', serif;">Greenify Boston</strong>
