@@ -9,7 +9,7 @@ a {
 
 h1, h2, h3 {
     font-weight: lighter;
-    font-family: "DM Serif Display", serif;
+    font-family: "DM Serif Display", serif !important;
 }
 
 .general_hover:hover {
