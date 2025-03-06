@@ -1,0 +1,39 @@
+{
+    "events": [
+        {
+            "date": "March 3, 2025",
+            "time": "10:00am - 12:00pm",
+            "description": "Boston Commons trash cleanup"
+        },
+
+        {
+            "date": "March 20, 2025",
+            "time": "1:00pm - 3:00pm",
+            "description": "Neighborhood tree planting day"
+        },
+
+        {
+            "date": "June 12, 2025",
+            "time": "10:00am - 3:00pm",
+            "description": "Community garden workshops"
+        },
+
+        {
+            "date": "July 3, 2025",
+            "time": "9:00am - 12:00pm",
+            "description": "E-waste collection day"
+        },
+
+        {
+            "date": "July 12, 2025",
+            "time": "10:00am - 4:00pm",
+            "description": "Community biking day"
+        },
+
+        {
+            "date": "August 11, 2025",
+            "time": "11:00am - 1:00pm",
+            "description": "Boston Commons trash cleanup"
+        }
+    ]
+}

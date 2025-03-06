@@ -18,10 +18,366 @@
                     bottomLinks.style.display = "none";
                 }
             });
+
+            setInterval('cycleImages()', 4000);
         };
+
+       // implements the slideshow on the front page 
+        function cycleImages(){
+            $active = $('#cycler .active');
+            $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+            $next.css('z-index', 2); // move the next image up the pile
+            $active.fadeOut(1500, function(){ // fade out the top image
+            $active.css('z-index', 1).show().removeClass('active'); // reset the z-index and unhide the image
+                $next.css('z-index', 3).addClass('active'); // make the next image the top one
+            });
+        }
+
     </script>
 
     <style type="text/css">
+        #section-one {
+            display: flex;
+            flex-direction: row;
+            height: 630px;
+            color: white;
+        }
+
+        #left-content-section-one {
+            max-width: 550px;
+            background-color: #A7C6DA;
+            background-image: url('images/homepage-buildings-svg.svg');
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+
+        #left-content-section-one h1 {
+            padding: 60px 60px 0 60px;
+            font-family: "DM Serif Display", serif;
+            font-size: 42px;
+        }
+
+        #left-content-section-one #landing-text {
+            padding: 0 60px 40px 60px;
+            font-size: 20px;
+        }
+
+        #cycler {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #cycler img {
+            position: absolute;
+            z-index: 1;
+            height: 630px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        #cycler img.active {
+            z-index: 3;
+        }
+
+        #learn-more-button {
+            background-color: #467594;
+            font-size: 20px;
+            width: 120px;
+            margin: 0 auto;
+            padding: 12px 40px;
+            text-align: center;
+            border-radius: 30px;
+            color: white;
+        }
+
+        #learn-more-button:hover {
+            background-color: white;
+            color:#467594;
+        }
+
+        #section-two {
+            overflow-x: hidden;
+            text-align: center;
+            height: fit-content;
+            padding: 60px 0;
+            background-color: #9EB25D;
+        }
+
+        #section-two-content {
+            color: white;
+            font-size: 26px;
+            margin: 0 20px;
+        }
+
+        #section-two-content #stats-table {
+            padding: 20px 0;
+            max-width: 1180px;
+        }
+
+        #section-two-content h2 {
+            font-family: "DM Serif Display", serif;
+            letter-spacing: 1px;
+            font-size: 38px;
+            margin: 26px 0;
+        }
+
+        #stats-table td {
+            padding: 0 30px;
+            max-width: 360px;
+        }
+
+        #stats-table .stat-number {
+            font-size: 40px;
+            margin-bottom: -20px;
+        }
+
+        #section-three {
+            height: 630px;
+            background-image: url('images/homepage-trees-svg.svg');
+            background-repeat: no-repeat;
+            background-position: bottom;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;     
+            margin-bottom: -2px;       
+        }
+
+        #section-three #left-content-section-three {
+            padding: 40px;  
+            font-size: 28px;  
+            color: #291514;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        #section-three #events-popup {
+            background-color: #467594;
+            color: white;
+            width: 360px;
+            height: fit-content;
+            padding: 40px 40px 60px 40px;
+            border-radius: 20px;
+            margin-top: -40px;
+            margin-right: 40px;
+        }
+
+        #section-three #events-popup h2 {
+            text-align: center;
+            font-family: "DM Serif Display", serif;
+            letter-spacing: 1px;
+            font-size: 32px;
+            margin-top: 10px !important;
+        }
+
+        #section-four {
+            padding: 20px 60px 0 60px;
+            background-color: #243010;
+            color: white;
+        }
+
+        #section-four h2 {
+            font-family: "DM Serif Display", serif;
+            letter-spacing: 1px;
+            font-size: 38px;
+        }
+
+        #section-four #highlights {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 20px;
+        }
+
+        #section-four #highlights .highlight-text {
+            max-width: 300px;
+            border-left: 3px solid white;
+            padding-left: 10px;
+            margin: 12px;
+        }
+
+        #section-five {
+            height: fit-content;
+            color: #291514;
+            font-size: 20px;
+            padding-bottom: 100px;
+        }
+
+        #section-five #content-section-five h2 {
+            font-family: "DM Serif Display", serif;
+            letter-spacing: 1px;
+            font-size: 38px;
+            margin-bottom: -20px;
+        }
+
+        #section-five #content-section-five {
+            margin-top: -40px;
+            padding: 0 60px;
+        }
+
+        #section-five #content-section-five input {
+            width: 650px;
+            height: 40px;
+            font-size: 20px;
+            padding-left: 10px;
+            font-family: "Montserrat", serif;
+        }
+
+        #section-five #content-section-five input::placeholder{
+            font-size: 20px;
+            font-family: "Montserrat", serif;
+        }
+
+        #submit-button-section-five {
+            background-color: #467594;
+            color: white;
+            width: 80px;
+            padding: 12px 40px;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        #submit-button-section-five:hover {
+            background-color:#A7C6DA;
+            cursor: pointer;
+        }
+
+        #submit-message {
+            height: 24px;
+        }
+
+        @media (max-width: 1140px) {
+            #section-three {
+                height: fit-content;
+                flex-direction: column;
+                padding-bottom: 40px;
+            }
+
+            #events-popup {
+                margin: 0 auto !important;
+                
+            }
+        }
+
+        @media (max-width: 1020px) {
+            #cycler {
+                display: none;
+            }
+
+            #section-one #landing-text {
+                text-align: center;
+            }
+
+            #left-content-section-one {
+                max-width: 100%;
+            }
+
+            #left-content-section-one h1 {
+                text-align: center;
+            }
+
+            #section-four #highlights {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 830px) {
+            #section-two #stats-table tr {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 800px) {
+            #section-five input {
+                width: 90% !important;
+                
+            }
+        }
+
+        @media (max-width: 750px) {
+            #section-four #highlights {
+                flex-direction: column;
+                
+            }
+
+            #section-four #highlights .highlight-text {
+                margin-bottom: 20px;
+                max-width: 100%;
+            }
+
+            #section-four h2 {
+                text-align: center;
+            }
+
+            #section-five {
+                text-align: center;
+            }
+
+            #section-five #content-section-five h2 {
+                margin-top: 80px;
+            }
+
+            #submit-button-section-five {
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 660px) {
+            #section-two h2 {
+                font-size: 28px;
+            }
+
+            #section-two-content {
+                font-size: 22px;
+            }
+
+            #stats-table .stat-number {
+                font-size: 28px;
+            }
+
+            #section-three #left-content-section-three {
+                font-size: 20px;
+            }
+
+            #section-four h2 {
+                font-size: 28px;
+            }
+
+            #section-five #content-section-five h2 {
+                font-size: 28px;
+            }
+
+            #section-one h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            #section-one h1 {
+                font-size: 32px;
+                padding: 0 20px;
+                padding-top: 60px;
+            }
+
+            #section-one #landing-text {
+                padding: 0 30px;
+                padding-bottom: 60px;
+            }
+            
+            #section-three #events-popup {
+                width: auto;
+                max-width: 360px;
+            }
+
+            #section-four {
+                padding: 20px 20px 0 20px;
+            }
+        }
     </style>
     
 </head>
@@ -29,7 +385,7 @@
     <!-- NAVBAR USED FOR BIGGER DEVICES -->
     <ul id="nav">
         <div id="nav-left">
-            <a href="index.html"><img src="greenifybostonlogo.svg"/></a> 
+            <a href="index.html"><img src="images/greenifybostonlogo.svg"/></svg></a> 
             <li><a href="index.html">Greenify Boston</a></li>   
         </div>
 
@@ -51,7 +407,7 @@
     <ul id="mnav">
         <div id ="mnav-top">
             <div id="mnav-left">
-                <a href="index.html"><img src="greenifybostonlogo.svg"/></a> 
+                <a href="index.html"><img src="images/greenifybostonlogo.svg"/></a> 
                 <li><a href="index.html">Greenify Boston</a></li>   
             </div>
     
@@ -71,15 +427,141 @@
     </ul>
 
 
+    <div id="section-one">
+        <div id="left-content-section-one">
+            <h1>Help Boston Flourish</h1>
 
-    <!-- PUT CONTENT HERE -->
+            <p id="landing-text">
+                Join our  volunteers on their journey to help greenify Boston by 
+                planting trees, picking up trash, fighting for more sustainable 
+                legislation, and holding big businesses accountable.
+            </p>
 
+            <a href="about.html"><p id="learn-more-button">Learn More</p></a>
+        </div>
 
+        <div id ="cycler">
+            <img class="active" src="images/slider-image-4.jpg"/>
+            <img src="images/slider-image-1.jpg"/>
+            <img src="images/slider-image-2.jpg"/>
+            <img src="images/slider-image-3.jpg"/>
+            <img src="images/slider-image-5.jpg"/>
+        </div>
+    </div>
+
+    <div id="section-two">
+        <div id="section-two-content">
+            <h2>Boston's year in numbers:</h2>
+
+            <table id="stats-table" style="margin: 0 auto;">
+                <tr>
+                    <td>
+                        <p class="stat-number"><strong>5.4 million</strong></p>
+                        <p>metric tons of greenhouse gases emitted.</p>
+                    </td>
+
+                    <td>
+                        <p class="stat-number"><strong>3.5&deg; F</strong></p>
+                        <p>increase in temperature.</p>
+                    </td>
+
+                    <td>
+                        <p class="stat-number"><strong>10 inch</strong></p>
+                        <p>rise in Boston Harbor's sea levels.</p>
+                    </td>
+                </tr>
+            </table>
+
+            <p><strong>Work with us to give Boston a brighter future</strong></p>
+        </div>
+    </div>
+
+    <div id="section-three">
+        <div id="left-content-section-three">
+            <p><strong>
+                "There is something infinitely healing in the repeated refrains of
+                nature--the assurance that dawn comes after night, and spring after 
+                winter"
+            </strong></p>
+
+            <p>-Rachel Carson's <i>Silent Spring</i></p>
+        </div>
+
+        <div id="events-popup">
+            <h2>Upcoming Events</h2>
+
+            <script>
+                // get data from NON-LOCAL json file
+                $.get("https://rockyboo3.github.io/greenify_boston/upcomingevents.json", data => {
+                    data["events"].forEach(event => {
+
+                        // add each event in the json to the popup
+                        $("#events-popup").append(
+                            '<p><strong>' + event["date"] + '</strong><br>' +
+                            event["time"] + '<br>' +
+                            event["description"] + '</p>'
+                        );
+                    })
+                });
+            </script>
+        </div>
+    </div>
+
+    <div id="section-four">
+        <h2>Latest Highlights</h2>
+        <div id="highlights">
+            <div class="highlight-text" id="highlight-1">
+                Our sustainable recycling initiative has spurned the creation of 5 new recycling facilities across Boston
+            </div>
+
+            <div class="highlight-text" id="highlight-2">
+                Transformed 15 vacant lots into vibrant community gardens and green spaces
+            </div>
+
+            <div class="highlight-text" id="highlight-3">
+                Installed 300 public recycling bins in high-traffic areas, increasing recycling rates by 40%
+            </div>
+        </div>
+    </div>
+
+    <div id="section-five">
+        <img src="images/greenifybostonwave.svg"/>
+
+        <div id="content-section-five">
+            <h2>Subscribe to our newsletter</h2>
+            <p>Stay up to date with the latest news from Greenify Boston</p>
+            <input id="email-input" type="text" placeholder="Enter email here"/>
+            <p id="submit-button-section-five">Submit</p>
+            <p id="submit-message"></p>
+        </div>
+    </div>
+
+    <script>
+        // form validation for entering an email for the newsletter
+        $('#submit-button-section-five').click(() => {
+            $('#email-input').attr('placeholder', 'Enter email here');
+            userInput = $('#email-input').val();
+            message = "";
+            
+            // if user does not follow email format (here, defined by using an @ and a . and no spaces)    
+            // also handles if user inputs nothing
+            if (!(userInput.includes('@') && userInput.includes('.') && !userInput.trimEnd().includes(" "))){
+                message = "Please enter a valid email and try again."
+            
+            // if the user enters a valid email
+            } else {
+                $('#email-input').attr('placeholder', 'Thank you for submitting your email!');
+            }
+
+            $('#email-input').val("");
+            $('#submit-message').html(message);
+        });
+    </script>
 
     <!-- FOOTER -->
     <div id="footer">
         <div id="footer-left-content">
-            <a id="footer-logo" href="index.html"><img src="greenifybostonlogo.svg"/></a> 
+            <a id="footer-logo" href="index.html"><img src="images/greenifybostonlogo.svg"/></a> 
 
             <p>
                 <strong style="font-size: 18px; font-family: 'DM Serif Display', serif;">Greenify Boston</strong>
