@@ -461,15 +461,20 @@
         </div>
         <div class="leadershipContainer" id="leadershipContainer">
             <script>
-            // Change this to a homegrown object
-                const isabel = {src: "images/annika.jpg", name: "Isabella Cruz", title: "Executive Director"};
-                const talia = {src: "images/christina.jpg", name: "Talia Gray", title: "Policy Coordinator"};
-                const mark = {src: "images/linkedin.jpg", name: "Mark Caldwell", title: "Finance Manager"};
-                const itay = {src: "images/itay.jpg", name: "Omar Haddad", title: "Sustainability Lead"};
-                let people = [isabel, talia, mark, itay];
+                class teamLeader {
+                    constructor(src, name, title) {
+                        this.src = src;
+                        this.name = name;
+                        this.title = title;
+                    }
+                } 
+                teamLeaders = [
+                    new teamLeader("images/annika.jpg", "Isabella Cruz", "Executive Director"),
+                    new teamLeader("images/christina.jpg", "Talia Gray", "Policy Coordinator"),
+                    new teamLeader("images/linkedin.jpg", "Mark Caldwell", "Finance Manager"),
+                    new teamLeader("images/itay.jpg", "Omar Haddad", "Sustainability Lead")
+                ];
 
-
-             
                 let width = window.innerWidth;
                 resize(width);
 
@@ -499,7 +504,7 @@
                         leaders.appendChild(newPerson);
                     }
                     for(let i = 0; i < 4; i++) {
-                        document.getElementById("person" + i).innerHTML = "<img src = " + people[i].src + "> <h3>" + people[i].name + "</h3> <h4>" + people[i].title + "</h4>";
+                        document.getElementById("person" + i).innerHTML = "<img src = " + teamLeaders[i].src + "> <h3>" + teamLeaders[i].name + "</h3> <h4>" + teamLeaders[i].title + "</h4>";
 
                     }
                 }
@@ -526,7 +531,7 @@
                         leaders.appendChild(newPerson);
                     } 
                     for(let i = 0; i < 4; i++) {
-                        document.getElementById("person" + i).innerHTML = "<img src = " + people[i].src + "> <h3>" + people[i].name + "</h3> <h4>" + people[i].title + "</h4>";
+                        document.getElementById("person" + i).innerHTML = "<img src = " + teamLeaders[i].src + "> <h3>" + teamLeaders[i].name + "</h3> <h4>" + teamLeaders[i].title + "</h4>";
                     }
                 } 
             </script>
