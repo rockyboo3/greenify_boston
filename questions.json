@@ -4,61 +4,71 @@
             "section" : "General Questions",
             "qNum" : 1,
             "question" : "What is Greenify Boston?",
-            "answer" : "Greenify Boston is an organization dedicated to making Boston a greener and more sustainable city. We focus on environmental initiatives such as organizing clean-up events and planting trees throughout the city. Our mission is to enhance the urban environment, promote sustainability, and engage the community in efforts to improve the city's green spaces. By participating in these activities, we aim to create a healthier and more vibrant urban ecosystem for everyone to enjoy."
+            "answer" : "Greenify Boston is an organization dedicated to making Boston a greener and more sustainable city. We focus on environmental initiatives such as organizing clean-up events and planting trees throughout the city. Our mission is to enhance the urban environment, promote sustainability, and engage the community in efforts to improve the city's green spaces. By participating in these activities, we aim to create a healthier and more vibrant urban ecosystem for everyone to enjoy.",
+            "isLast" : false
         },
         {
             "section" : "General Questions",
             "qNum" : 2,
             "question" : "Question 2 Here",
-            "answer" : "Question 2 Answer Here"
+            "answer" : "Question 2 Answer Here",
+            "isLast" : false
         },
         {
             "section" : "General Questions",
             "qNum" : 3,
             "question" : "Question 3 Here",
-            "answer" : "Question 3 Answer Here"
+            "answer" : "Question 3 Answer Here",
+            "isLast" : true
         },
         {
             "section" : "Getting Involved",
             "qNum" : 4,
             "question" : "Question 4 Here",
-            "answer" : "Question 4 Answer Here"
+            "answer" : "Question 4 Answer Here",
+            "isLast" : false
         },
         {
             "section" : "Getting Involved",
             "qNum" : 5,
             "question" : "Question 5 Here",
-            "answer" : "Question 5 Answer Here"
+            "answer" : "Question 5 Answer Here",
+            "isLast" : false
         },
         {
             "section" : "Getting Involved",
             "qNum" : 6,
             "question" : "Question 6 Here",
-            "answer" : "Question 6 Answer Here"
+            "answer" : "Question 6 Answer Here",
+            "isLast" : false
         },
         {
             "section" : "Getting Involved",
             "qNum" : 7,
             "question" : "Question 7 Here",
-            "answer" : "Question 7 Answer Here"
+            "answer" : "Question 7 Answer Here",
+            "isLast" : true
         },
         {
             "section" : "Our Impact",
             "qNum" : 8,
             "question" : "Question 8 Here",
-            "answer" : "Question 8 Answer Here"
+            "answer" : "Question 8 Answer Here",
+            "isLast" : false
         },
         {
             "section" : "Our Impact",
             "qNum" : 9,
             "question" : "Question 9 Here",
-            "answer" : "Question 9 Answer Here"
+            "answer" : "Question 9 Answer Here",
+            "isLast" : false
         },
         {
             "section" : "Our Impact",
             "qNum" : 10,
             "question" : "Question 10 Here",
-            "answer" : "Question 10 Answer Here"
+            "answer" : "Question 10 Answer Here",
+            "isLast" : true
         }
     ]
     }
