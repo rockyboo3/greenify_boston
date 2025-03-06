@@ -28,6 +28,7 @@
         }
 
         h1 {
+            font-family: "DM Serif Display", serif;
             font-size: 38px;
             color: white;
             text-align: center; 
@@ -35,6 +36,7 @@
         }
         h3 {
             text-align: center;
+            font-family: "DM Serif Display", serif;
             font-weight: 100;
         }
 
@@ -179,115 +181,6 @@
         </p>
         <form name="myForm" action="#" id="interest-form" style="padding: 20px;"
         onsubmit="return validateForm()" method="post">
-            <strong>Contact information</strong>
-                <br><br>
-                <label for="name" class="requiredLabel">Name: </label>
-                <input type="text" id="name" name="name" required> 
-
-                <br>
-                <label for="date" class="requiredLabel">Date: </label>
-                <input type="date" id="date" name="date" required> 
-                <br>
-
-                <label for="address" class="requiredLabel">Home Address: </label>
-                <input type="text" id="address" name="address" required>
-                <br>
-
-                <label for="phonenum" class="requiredLabel">Phone Number: </label>
-                <input type="tel" id="phonenum" name="phonenum" placeholder="XXX-XXX-XXXX" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
-                title="Phone number should follow this format: XXX-XXX-XXXX">
-                <br>
-
-                <label for="email" class="requiredLabel">Email: </label>
-                <input type="email" id="email" name="email" required>
-                <br>
-
-                <label for="dob" class="requiredLabel">Date of Birth: </label>
-                <input type="date" id="dob" name="dob" required>
-                <br>
-                
-                <label style="width: 200px;" class="requiredLabel">Valid Driver's License: </label>
-                <br>
-                <input type="radio" id="yeslicense" name="license" value="yes">
-                <label for="yeslicense" style="width: 60px;">yes</label>
-                <input type="radio" id="nolicense" name="license" value="no">
-                <label for="nolicense" style="width: 60px;">no</label>
-                <br><br><br>
-
-            <strong>Emergency Contact Information</strong>
-                <br><br>
-                <label for="emergencyname" class="requiredLabel">Name: </label>
-                <input type="text" id="emergencyname" name="emergencyname" required> 
-
-                <br>
-                <label for="relationship" class="requiredLabel">Relationship: </label>
-                <input type="text" id="relationship" name="relationship" required> 
-                <br>
-
-                <label for="emergencyphone" class="requiredLabel">Phone Number: </label>
-                <input type="tel" id="emergencyphone" name="emergencyphone" placeholder="XXX-XXX-XXXX" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
-                title="Phone number should follow this format: XXX-XXX-XXXX">
-                <br>
-
-                <label for="emergencyaddress" class="requiredLabel">Primary Address: </label>
-                <input type="text" id="emergencyaddress" name="emergencyaddress" required> 
-                <br><br><br>
-
-            <strong>Availability (EST)</strong>
-                <br><br>
-                <div id="availabilityCheckboxes">
-                    <div>
-                        <input type="checkbox" id="sundays" name="sundays" value="sundays">
-                        <label for="sundays">Sundays, 10am-4pm</label>
-                    </div>
-                    <br>
-                    <div>
-                        <input type="checkbox" id="mondays" name="mondays" value="mondays">
-                        <label for="mondays">Mondays, 9am-5pm</label>
-                    </div>
-                    <br>
-                    <div>
-                        <input type="checkbox" id="tuesdays" name="tuesdays" value="tuesdays">
-                        <label for="tuesdays">Tuesdays, 9am-5pm</label>
-                    </div>
-                    <br>
-                    <div>
-                        <input type="checkbox" id="wednesdays" name="wednesdays" value="wednesdays">
-                        <label for="wednesdays">Wednesdays, 9am-5pm</label>
-                    </div>
-                    <br>
-                    <div>
-                        <input type="checkbox" id="thursdays" name="thursdays" value="thursdays">
-                        <label for="thursdays">Thursdays, 9am-5pm</label>
-                    </div>
-                    <br>
-                    <div>
-                        <input type="checkbox" id="fridays" name="fridays" value="fridays">
-                        <label for="fridays">Fridays, 9am-5pm</label>
-                    </div>
-                    <br>
-                    <div>
-                        <input type="checkbox" id="saturdays" name="saturdays" value="saturdays">
-                        <label for="saturdays">Saturdays, 10am-4pm</label>
-                    </div>        
-                </div>
-                <br><br>
-
-                <label for="startdate" class="requiredLabel">Start Date: </label>
-                <input type="date" id="startdate" name="startdate" required>
-                <br>
-
-                <label for="enddate">End Date (leave blank if unsure): </label>
-                <input type="date" id="enddate" name="enddate">
-                <br><br><br>
-
-            <strong>Additional Comments</strong>
-                <br><br>
-                <label for="notesandqs" style="width: 100%;">Please use the provided space for any questions or additional notes: </label>
-                <br>
-                <textarea id="notesandqs" name="notesandqs"></textarea> 
-                <br><br><br>
-            
             <div id="submit-button-wrapper" style="text-align: center;">
                 <label style="width: 100%;">Please confirm all information is correct before submitting.</label>
                 <br><br>
@@ -298,10 +191,11 @@
             function validateForm() {
                 let innerHTML = "<h2>Thank you for signing up!<br><br></h2>";
                 innerHTML+= "<p>Your form has been submitted, you will receive a receipt of your new membership in your email and will be automatically added to our newsletter<p>";
-                let extraSpaceHeight = window.innerHeight - 207.44 - 195 - 85;
+                let extraSpaceHeight = window.innerHeight - 715;
                 document.getElementById("extraSpace").style.height=extraSpaceHeight + "px";
                 document.getElementById("form-section").innerHTML = innerHTML;
                 document.getElementById("form-section").style = "padding: 30px;"
+                document.getElementById("form-section").style = "text-align: center;"
                 document.getElementById("topWords").style = "margin-top: 125px;"
                 window.scrollTo(0, 0);
             }
