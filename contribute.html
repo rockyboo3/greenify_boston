@@ -47,7 +47,7 @@
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%);
         }
 
-        .image-text {
+        h1 {
             white-space: nowrap;
             position: absolute; 
             top: 35%;
@@ -63,6 +63,7 @@
             border-radius: 10px; 
             animation: fadeIn 2s ease-in-out;
         }
+
 
         .image-text2 {
             white-space: nowrap;
@@ -81,8 +82,8 @@
             animation: fadeIn 2s ease-in-out;
         }
 
-        @media screen and (max-width: 514px) {
-            .image-text {
+        @media screen and (max-width: 430px) {
+            .image-container h1 {
                 top: 30%;
                 font-size: 2rem; 
                 left: 50%; 
@@ -191,32 +192,6 @@
         }
 
 
-        .donation-form button {
-            padding: 10px 30px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            border-radius: 8px;
-        }
-
-        label {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 2px;
-            display: block;
-            text-align: left;
-            margin-left: 6px;
-        }
-
-        .form-input {
-            margin-left: 10px;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 250px;
-        }
-
         .blue-box {
             background-color: rgb(70, 117, 148);
             border-radius: 10px;
@@ -291,11 +266,19 @@
             padding: 40px;
             border-radius: 20px; 
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); 
-            width: 100%; 
             text-align: center;
             margin: 40px auto; 
             border: 1px solid #ddd; 
             transition: all 0.3s ease; 
+            width: 100%;
+        }
+
+        @media (max-width: 430px) {
+            .message-box {
+                padding: 0px;
+                margin: 0px;
+                /* width: 50%; */
+            }
         }
 
         .message-box:hover {
@@ -516,7 +499,7 @@
 
     <div class="image-container">
         <img src="images/handstree.jpg" alt="Hands tree">
-        <div class="image-text">Plant a Tree, Save the Earth</div>
+        <h1>Plant a Tree, Save the Earth</h1>
         <div class="image-text2">Our goal is to form a community everywhere to 
             help save the environment!!!
         </div>
