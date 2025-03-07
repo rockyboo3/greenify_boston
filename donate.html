@@ -24,13 +24,15 @@
 
     <style type="text/css">
        body { 
-            overflow-x: hidden;
+            width: 100%;
+            border: 1px solid black;
             display: flex;
             flex-direction: column; 
             align-items: center; 
-            background-color: #467594;
             margin: 0;
             font-family: "Montserrat", serif;
+            overflow-x: hidden;
+
         }
 
         .donation-form {
@@ -40,12 +42,14 @@
             text-align: center;
             margin-top: 20px; 
             margin-bottom: 50px;
+            width: 60%;
         }
         .donation-options {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-bottom: 20px;
+            width: 100%;
         }
 
         .donation-options button, .custom-amount button {
@@ -60,7 +64,7 @@
         }
 
         .donation-options button:hover, .custom-amount button:hover {
-            background-color: #9EB25D;
+            background-color: #c5cab4;
         }
 
         .donation-form button {
@@ -79,23 +83,21 @@
         .custom-amount input {
             padding: 10px;
             font-size: 1rem;
-            border: 1px solid #ccc;
             border-radius: 5px;
             width: 150px;
         }
 
         .cause-explanation {
             background-color: white;  
-            padding: 20px;
             border-radius: 10px;
             text-align: center;
             margin-top: 20px;
-            width: 80%;
+            width: 75%;
         }
 
         .cause-explanation h3 {
             font-size: 1.5rem;
-            color: #9EB25D;
+            color: #291514;
         }
         .cause-explanation p {
             font-size: 1.1rem;
@@ -106,8 +108,8 @@
             background-color: white;
             padding: 20px;
             border-radius: 10px;
-            margin-top: 40px;
-            width: 80%;
+            width: 500px;
+            height: 400px;
             text-align: center;
         }
 
@@ -115,6 +117,17 @@
             font-size: 1.8rem;
             color: #A7C6DA;
             margin-bottom: 20px;
+        }
+
+        .leaderBox {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            background-color: #9EB25D;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+
         }
 
         .leaderboard-table {
@@ -133,16 +146,54 @@
             color: white;
         }
 
-        .leaderboard-table tr:hover {
-            background-color: white;
-        }
-
         h1 {
             text-align: center; 
             font-family: 'DM Serif Display', serif; 
             color: white; 
             margin-top: 60px;
             font-size: 45px;
+        }
+
+        .explanation-Container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-Container {
+            background-color: #467594;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            background-color: #467594;
+            width: 100%;
+        }
+        .filler {
+            width: 8%;
+        }
+
+        @media(max-width:950px) {
+            .leaderBox {
+                flex-direction: column;
+                height: 1150px;
+            }
+        }
+
+        @media(max-width:685px) {
+            .donation-form {
+                width: 75%;
+            }
+        }
+        @media(max-width:560px) {
+            .donation-form {
+                width: 85%;
+            }
         }
         
     </style>
@@ -194,116 +245,125 @@
         </div>     
     </ul>
     <!-- End of Caitlyn's code -->
+    <div class="header">
+        <h1>Donate to Greenify-Boston: Each Dollar Helps</h1>
+    </div>
 
-    <h1>Donate to Greenify-Boston: Each Dollar Helps</h1>
-
-    <div class="donation-form">
-        <h2>Every Dollar Donated is a New Tree Planted</h2>
-        <h2>Donate to Support Our Cause!</h2>
-        <div class="donation-options">
-            <button type="button" onclick="donate(10)">$10</button>
-            <button type="button" onclick="donate(20)">$20</button>
-            <button type="button" onclick="donate(50)">$50</button>
-            <button type="button" onclick="donate(100)">$100</button>
+    <div class="form-Container">
+        <div class="donation-form">
+            <h2>Every Dollar Donated is a New Tree Planted</h2>
+            <h2>Donate to Support Our Cause!</h2>
+            <div class="donation-options">
+                <button type="button" onclick="donate(10)">$10</button>
+                <button type="button" onclick="donate(20)">$20</button>
+                <button type="button" onclick="donate(50)">$50</button>
+                <button type="button" onclick="donate(100)">$100</button>
+            </div>
+    
+            <div class="custom-amount">
+                <input type="number" id="customAmount" placeholder="Other Amount" min="1">
+                <button type="button" onclick="donateCustom()">Donate</button>
+            </div> 
+            <br>
+            <p id="thanks"></p>
         </div>
-
-        <div class="custom-amount">
-            <input type="number" id="customAmount" placeholder="Other Amount" min="1">
-            <button type="button" onclick="donateCustom()">Donate</button>
-        </div> 
-        <br>
-        <p id="thanks"></p>
     </div>
 
+    <div class="explanation-Container">
+        <div class="cause-explanation">
+            <h3>Why Your Donation Matters</h3>
+            <p style="font-size: 18px;">By donating to Greenify Boston, you are directly contributing to our 
+            mission of making Boston a greener, more sustainable city. Every dollar 
+            you donate goes towards planting trees, creating green spaces, and 
+            promoting environmental awareness in our local communities. Together,
+             we can make a significant impact on our environment and help create a 
+             better future for generations to come. Thank you for being part of 
+             this movement!</p>
+        </div>
+    </div>
     <!-- Information Box about the cause -->
-    <div class="cause-explanation">
-        <h3>Why Your Donation Matters</h3>
-        <p style="font-size: 18px;">By donating to Greenify Boston, you are directly contributing to our 
-        mission of making Boston a greener, more sustainable city. Every dollar 
-        you donate goes towards planting trees, creating green spaces, and 
-        promoting environmental awareness in our local communities. Together,
-         we can make a significant impact on our environment and help create a 
-         better future for generations to come. Thank you for being part of 
-         this movement!</p>
-    </div>
 
     <br><br>
 
 
+    <div class="leaderBox">
+        <!-- Leaderboard for Top Donators -->
+        <div class="leaderboard">
+            <h3>Top Donators of All Time</h3>
+            <table class="leaderboard-table">
+                <tr>
+                    <th>Rank</th>
+                    <th>Donator</th>
+                    <th>Donation Amount</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>$10,000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>$9,780</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Michael Johnson</td>
+                    <td>$8,400</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Amy Lee</td>
+                    <td>$8,200</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>David Kim</td>
+                    <td>$7,800</td>
+                </tr>
+            </table>
+        </div><br><br><br>
 
-    <!-- Leaderboard for Top Donators -->
-    <div class="leaderboard">
-        <h3>Top Donators of All Time</h3>
-        <table class="leaderboard-table">
-            <tr>
-                <th>Rank</th>
-                <th>Donator</th>
-                <th>Donation Amount</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>$10,000</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Jane Smith</td>
-                <td>$9,780</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Michael Johnson</td>
-                <td>$8,400</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Amy Lee</td>
-                <td>$8,200</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>David Kim</td>
-                <td>$7,800</td>
-            </tr>
-        </table>
-    </div><br><br><br>
+        <div class="filler"></div>
 
-    <!-- Leaderboard for Top Donators -->
-    <div class="leaderboard">
-        <h3>Top Donators of the Week</h3>
-        <table class="leaderboard-table">
-            <tr>
-                <th>Rank</th>
-                <th>Donator</th>
-                <th>Donation Amount</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>April Wang</td>
-                <td>$500</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Tyler Hall</td>
-                <td>$475</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Jacob McKenny</td>
-                <td>$400</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Wesley Wang</td>
-                <td>$330</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Pearl Price</td>
-                <td>$310</td>
-            </tr>
-        </table>
-    </div><br><br><br>
+        <!-- Leaderboard for Top Donators -->
+        <div class="leaderboard">
+            <h3>Top Donators of the Week</h3>
+            <table class="leaderboard-table">
+                <tr>
+                    <th>Rank</th>
+                    <th>Donator</th>
+                    <th>Donation Amount</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>April Wang</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Tyler Hall</td>
+                    <td>$475</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Jacob McKenny</td>
+                    <td>$400</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Wesley Wang</td>
+                    <td>$330</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Pearl Price</td>
+                    <td>$310</td>
+                </tr>
+            </table>
+        </div><br><br><br>
+    </div>
+    
 
         <!-- FOOTER CONTENT -->
         <div id="footer">
