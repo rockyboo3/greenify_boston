@@ -25,12 +25,12 @@
         
         
        body { 
+            overflow-x: hidden;
             display: flex;
             flex-direction: column; 
             align-items: center; 
             background-color: #A7C6DA;
             margin: 0;
-            font-family: Arial, sans-serif;
         }
 
         .image-container {
@@ -139,10 +139,10 @@
 
         .green-box { /* it's actually blue now */ 
             background-color: #467594;
+            box-sizing: border-box;
             width: 100%;
-            padding: 40px;
+            padding: 60px;
             margin-top: 50px;
-            border-radius: 25px;
             color: white;
             font-size: 1.25rem;
             font-weight: bold;
@@ -278,12 +278,12 @@
             transform: scale(0.98); 
         }
 
-        
+/*         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
+        } */
 
 
         .message-box {
@@ -368,6 +368,7 @@
         }
 
         .outer-box {
+            box-sizing: border-box;
             padding: 30px;
             margin: 40px 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
