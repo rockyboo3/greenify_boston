@@ -8,6 +8,20 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <script>
+        window.onload = function() {
+            document.getElementById("hamburger-menu").addEventListener("click", () => {
+                var bottomLinks = document.getElementById("mnav-bottom");
+
+                if (bottomLinks.style.display == "none") {
+                    bottomLinks.style.display = "block";
+                } else {
+                    bottomLinks.style.display = "none";
+                }
+            });
+        };
+    </script>
+
     <style type="text/css">
        body { 
             display: flex;
