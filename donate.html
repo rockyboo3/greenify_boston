@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <head>
-    <title>Contribute</title>
+    <title>Donate</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -96,7 +96,7 @@
         }
 
         .cause-explanation h3 {
-            font-size: 1.5rem;
+            font-size: 35px;
             color: #291514;
         }
         .cause-explanation p {
@@ -111,6 +111,7 @@
             width: 500px;
             height: 400px;
             text-align: center;
+            margin: 30px;
         }
 
         .leaderboard h3 {
@@ -127,7 +128,6 @@
             justify-content: center;
             align-items: center;
             height: 600px;
-
         }
 
         .leaderboard-table {
@@ -173,9 +173,21 @@
         .header {
             background-color: #467594;
             width: 100%;
+            padding: 25px;
         }
         .filler {
-            width: 8%;
+            width: 7%;
+        }
+
+
+        @media(max-width:1050px) {
+            .filler {
+                width: 0% !important;
+            }
+            .leaderboard {
+                width: 450px;
+                margin: 20px;
+            }
         }
 
         @media(max-width:950px) {
@@ -189,12 +201,25 @@
             .donation-form {
                 width: 75%;
             }
+            
         }
         @media(max-width:560px) {
             .donation-form {
                 width: 85%;
             }
+            .leaderboard {
+                width: 350px;
+                height: fit-content;
+            } 
+            .leadership {
+                height: 900px;
+            }
+            .leaderBox {
+                flex-direction: column;
+                height: 1350px;
+            }
         }
+
         
     </style>
 </head>
@@ -253,11 +278,35 @@
         <div class="donation-form">
             <h2>Every Dollar Donated is a New Tree Planted</h2>
             <h2>Donate to Support Our Cause!</h2>
-            <div class="donation-options">
-                <button type="button" onclick="donate(10)">$10</button>
-                <button type="button" onclick="donate(20)">$20</button>
-                <button type="button" onclick="donate(50)">$50</button>
-                <button type="button" onclick="donate(100)">$100</button>
+            <div class="donation-options" id="donation-options">
+                <script>
+                    let donation = document.getElementById("donation-options");
+                    let width = window.innerWidth;
+                    resize(width);
+
+
+                    window.addEventListener('resize', function() {
+                        let width = window.innerWidth;
+                        resize(width);
+                    });
+                    function resize() {
+                        if (window.innerWidth > 580) {
+                        document.getElementById("donation-options").innerHTML = `
+                            <button type="button" onclick="donate(10)">$10</button>
+                            <button type="button" onclick="donate(20)">$20</button>
+                            <button type="button" onclick="donate(50)">$50</button>
+                            <button type="button" onclick="donate(100)">$100</button>
+                        `;
+                        } else {
+                            document.getElementById("donation-options").innerHTML = `
+                                <button type="button" onclick="donate(20)">$20</button>
+                                <button type="button" onclick="donate(50)">$50</button>
+                                <button type="button" onclick="donate(100)">$100</button>
+                            `;
+                        }
+                    }
+
+                </script>
             </div>
     
             <div class="custom-amount">
