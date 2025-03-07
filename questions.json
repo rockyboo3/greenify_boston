@@ -2,72 +2,80 @@
     "questions": [
         {
             "section" : "General Questions",
-            "qNum" : 1,
             "question" : "What is Greenify Boston?",
             "answer" : "Greenify Boston is an organization dedicated to making Boston a greener and more sustainable city. We focus on environmental initiatives such as organizing clean-up events and planting trees throughout the city. Our mission is to enhance the urban environment, promote sustainability, and engage the community in efforts to improve the city's green spaces. By participating in these activities, we aim to create a healthier and more vibrant urban ecosystem for everyone to enjoy.",
             "isLast" : false
         },
         {
             "section" : "General Questions",
-            "qNum" : 2,
-            "question" : "Question 2 Here",
-            "answer" : "Question 2 Answer Here",
+            "question" : "What kind of activities will I be doing as a volunteer?",
+            "answer" : "Depending on the event, you may be planting trees, removing litter, maintaining green spaces, or educating the community about sustainability. Each event description will provide details on what to expect.",
             "isLast" : false
         },
         {
             "section" : "General Questions",
-            "qNum" : 3,
-            "question" : "Question 3 Here",
-            "answer" : "Question 3 Answer Here",
+            "question" : "Are there age restrictions for volunteering?",
+            "answer" : "Volunteers of all ages are welcome! However, children under 16 must be accompanied by an adult. Some activities, like tree planting, may require physical effort, so please check the event details before signing up.",
+            "isLast" : false
+        },
+        {
+            "section" : "General Questions",
+            "question" : "Can I get community service hours for volunteering?",
+            "answer" : "Absolutely! We can provide a signed verification of your volunteer hours upon request. Just let us know at the event.",
             "isLast" : true
         },
         {
             "section" : "Getting Involved",
-            "qNum" : 4,
-            "question" : "Question 4 Here",
-            "answer" : "Question 4 Answer Here",
+            "question" : "How do I participate in an event?",
+            "answer" : "You can sign up to volunteer by visiting our website, filling out our volunteer form, or joining one of our scheduled events. No prior experience is needed—just a passion for the environment!",
             "isLast" : false
         },
         {
             "section" : "Getting Involved",
-            "qNum" : 5,
-            "question" : "Question 5 Here",
+            "question" : "How can I become a member?",
             "answer" : "Question 5 Answer Here",
             "isLast" : false
         },
         {
             "section" : "Getting Involved",
-            "qNum" : 6,
-            "question" : "Question 6 Here",
-            "answer" : "Question 6 Answer Here",
+            "question" : "Do I need to bring anything to an event?",
+            "answer" : "We provide most of the necessary tools and supplies, but we recommend wearing comfortable clothes, closed-toe shoes, and bringing a reusable water bottle. If you have gardening gloves or tools, feel free to bring them!",
             "isLast" : false
         },
         {
             "section" : "Getting Involved",
-            "qNum" : 7,
-            "question" : "Question 7 Here",
-            "answer" : "Question 7 Answer Here",
+            "question" : "How long do volunteer events typically last?",
+            "answer" : "Most events last between 2 to 4 hours, but you can participate for as long as you’re able!",
+            "isLast" : false
+        },
+        {
+            "section" : "Getting Involved",
+            "question" : "How else can I support Greenify Boston if I can’t volunteer in person?",
+            "answer" : "You can support us by donating, spreading the word about our mission, or following us on social media. Even small actions, like picking up trash during your daily walk, make a difference!",
             "isLast" : true
         },
         {
             "section" : "Our Impact",
-            "qNum" : 8,
-            "question" : "Question 8 Here",
-            "answer" : "Question 8 Answer Here",
+            "question" : "How has Greenify Boston made a difference in the community?",
+            "answer" : "Since our founding, Greenify Boston has planted hundreds of trees, removed thousands of pounds of litter, and revitalized numerous green spaces throughout the city. Our efforts help improve air quality, promote biodiversity, and create cleaner, healthier neighborhoods for everyone.",
             "isLast" : false
         },
         {
             "section" : "Our Impact",
-            "qNum" : 9,
-            "question" : "Question 9 Here",
-            "answer" : "Question 9 Answer Here",
+            "question" : "Why is tree planting important for Boston?",
+            "answer" : "Trees help reduce air pollution, lower urban temperatures, absorb carbon dioxide, and provide habitats for wildlife. By increasing Boston’s tree canopy, we’re making the city more resilient to climate change while improving the quality of life for residents.",
             "isLast" : false
         },
         {
             "section" : "Our Impact",
-            "qNum" : 10,
-            "question" : "Question 10 Here",
-            "answer" : "Question 10 Answer Here",
+            "question" : "How does picking up trash benefit the environment?",
+            "answer" : "Removing litter prevents plastic and other waste from polluting our waterways, harming wildlife, and degrading public spaces. A cleaner city also encourages people to take pride in their community and adopt more sustainable habits.",
+            "isLast" : false
+        },
+        {
+            "section" : "Our Impact",
+            "question" : "How can I help Greenify Boston expand its impact?",
+            "answer" : "You can help by volunteering, spreading the word, or donating to support our efforts. Every tree we plant and every piece of trash we remove brings us closer to a cleaner, greener Boston!",
             "isLast" : true
         }
     ]

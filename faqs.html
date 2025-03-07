@@ -9,9 +9,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <script>
+        let currQNum = 1;
         //Question object constructor
-        function aQuestion(questionNum, questionSection, questionText, questionAnswer, last) {
-            this.qNum = questionNum; //int
+        function aQuestion(questionSection, questionText, questionAnswer, last) {
             this.section = questionSection; //string
             this.question = questionText; //string
             this.answer = questionAnswer; //string
@@ -23,7 +23,7 @@
             $.get("questions.json", function(questionsJSON) { //.get automatically parses JSON string to JS Object
                 let questionsArr = [];
                 questionsJSON.questions.forEach(function(currQ) {
-                    let q = new aQuestion(currQ.qNum, currQ.section, currQ.question, currQ.answer, currQ.isLast); //makes the curr question json string into aQuestion object
+                    let q = new aQuestion(currQ.section, currQ.question, currQ.answer, currQ.isLast); //makes the curr question json string into aQuestion object
                     //Make question inside its designated section
                     if (q.section == "General Questions") {
                         addToGeneral(q);
@@ -37,7 +37,7 @@
         }
 
         function addToGeneral(questionObj) {
-            let qID = "question" + questionObj.qNum;
+            let qID = "question" + currQNum;
             $("#generalQs_section").append("<div class='questionBox' id=" + qID + "></div>");
             $("#" + qID).append("<span class='question'>" + questionObj.question + "</span>");
             $("#" + qID).append("<img src='images/dropdown_icon.png' alt='dropdown_arrow' class='dropdown_arrows'>");
@@ -45,10 +45,11 @@
             if (questionObj.isLast) {
                 $("#" + qID).addClass("lastQ");
             }
+            currQNum++;
         }
 
         function addToGetInvolved(questionObj) {
-            let qID = "question" + questionObj.qNum;
+            let qID = "question" + currQNum;
             $("#getInvolvedQs_section").append("<div class='questionBox' id=" + qID + "></div>");
             $("#" + qID).append("<span class='question'>" + questionObj.question + "</span>");
             $("#" + qID).append("<img src='images/dropdown_icon.png' alt='dropdown_arrow' class='dropdown_arrows'>");
@@ -56,10 +57,11 @@
             if (questionObj.isLast) {
                 $("#" + qID).addClass("lastQ");
             }
+            currQNum++;
         }
 
         function addToOurImpact(questionObj) {
-            let qID = "question" + questionObj.qNum;
+            let qID = "question" + currQNum;
             $("#ourImpactQs_section").append("<div class='questionBox' id=" + qID + "></div>");
             $("#" + qID).append("<span class='question'>" + questionObj.question + "</span>");
             $("#" + qID).append("<img src='images/dropdown_icon.png' alt='dropdown_arrow' class='dropdown_arrows'>");
@@ -67,6 +69,7 @@
             if (questionObj.isLast) {
                 $("#" + qID).addClass("lastQ");
             }
+            currQNum++;
         }
 
 
@@ -158,6 +161,12 @@
             padding: 5px;
         }
 
+        .dropdown_arrows:hover {
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+        }
+
         .question {
             font-size: 20px;
             margin: 15px;
@@ -222,6 +231,12 @@
 
             .question, .qAnswer {
                 font-size: 18px;
+                margin-inline: 0px;
+            }
+
+            .dropdown_arrows {
+                width: 20px;
+                height: 20px;
             }
         }
 
@@ -244,6 +259,7 @@
 
             .question, .qAnswer {
                 font-size: 18px;
+                margin-inline: 0px;
             }
 
             #FAQ_title {
@@ -251,6 +267,11 @@
                 width: 390px;
                 text-align: center;
                 margin-bottom: 40px;
+            }
+
+            .dropdown_arrows {
+                width: 20px;
+                height: 20px;
             }
         }
 
