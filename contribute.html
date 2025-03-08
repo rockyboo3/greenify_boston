@@ -69,11 +69,17 @@
         #section_two #info_wrapper {
             display: flex;
             flex-direction: row;
-            justify-content: soa;
+            max-width: 900px;
+            margin: 0 auto;
+            justify-content: space-between;
         }
         
         #section_two #info_left, #section_two #info_right {
-            width: 300px;
+            width: 340px;
+        }
+
+        #left_text, #right_text {
+            height: 120px;
         }
 
         #section_two .button {
@@ -84,6 +90,11 @@
             background-color: #9EB25D;
             margin: 0 auto;
             font-size: 14px;
+        }
+
+        .button:hover {
+            background-color: #c5cab4 !important;
+            cursor: pointer;
         }
 
         #section_four {
@@ -160,6 +171,19 @@
         .contListCat {
             width: 200px;
         }
+
+        @media (max-width: 920px) {
+            #section_two #info_wrapper {
+                flex-direction: column;
+                width: fit-content;
+                text-align: center;
+            }
+
+            #section_two #info_right {
+                margin-top: 40px;
+            }
+        }
+        
         @media (max-width: 750px) {
             #section_four #highlights {
                 flex-direction: column;
@@ -265,7 +289,7 @@
                     greener, healthier city. Every dollar makes a difference--
                     thank you for your support!
                 </p>
-                <p id="left_text_donate_button" class="button">Donate Today</p>
+                <a href="donate.html" style="color: white;"><p id="left_text_donate_button" class="button">Donate Today</p></a>
             </div>
             <div id="info_right">
                 <h2>Volunteering</h2>
@@ -274,7 +298,7 @@
                     protects wildlife, and fights climate change--all while
                     building community and making a lasting impact!
                 </p>
-                <p id="right_text_signup_button" class="button">Sign Up</p>
+                <a href="joinourteam.html" style="color: white;"><p id="right_text_signup_button" class="button">Sign Up</p></a>
             </div>
         </div>
 
