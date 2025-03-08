@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greenify Boston-Contribute</title>
+    <meta name='viewport' content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+        window.onload = function() {
+            document.getElementById("hamburger-menu").addEventListener("click", () => {
+                bottomLinks = document.getElementById("mnav-bottom");
+
+                if (bottomLinks.style.display == "none") {
+                    bottomLinks.style.display = "block";
+                } else {
+                    bottomLinks.style.display = "none";
+                }
+            });
+
+            setInterval('cycleImages()', 4000);
+        };
+    </script>
+
+    <style type="text/css">
+        #section_one {
+            background-image: url("images/contributelandingimg.jpg");
+            overflow: hidden;
+            height: 630px;
+
+            background-attachment: fixed;
+            background-size: cover;
+            box-shadow: inset 0 0 0 1000px rgba(70, 117, 148, .6);
+            color: white;
+        }
+        
+        #section_one h1 {
+            font-size: 50px;
+        }
+        
+        #section_one img {
+            width: 100%;  
+        }
+
+        #section_one #title_box {
+            width: 350px;
+            height: 100px;
+            display: flex;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #section_two {
+            background-color: #243010;
+            color: white;
+            padding: 40px 40px 60px 40px;
+        }
+
+        #section_two h2 {
+            text-align: center;
+            font-size: 32px;
+        }
+        
+        #section_two #info_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: soa;
+        }
+        
+        #section_two #info_left, #section_two #info_right {
+            width: 300px;
+        }
+
+        #section_two .button {
+            width: 120px;
+            padding: 16px 20px;
+            border-radius: 40px;
+            text-align: center;
+            background-color: #9EB25D;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+
+        #section_four {
+            padding: 20px 60px 50px 60px;
+            background-color: #243010;
+            color: white;
+        }
+
+        #section_four h2 {
+            font-size: 38px;
+        }
+        
+        #section_four #highlights {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 20px;
+        }
+
+        #section_four #highlights .highlight-text {
+            max-width: 300px;
+            border-left: 3px solid white;
+            padding-left: 10px;
+            margin: 12px;
+        }
+
+        #contact_us {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border: 10px solid black;
+        }
+        #section_four h2 {
+            text-align: center;
+        }
+        #section_four h3 {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        #section_three {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background-color: #bdd3e2;
+        }
+        #section_three h2 {
+            margin: 0px;
+            font-size: 40px;
+        }
+        
+        #section_three .contListCat {
+            font-weight: bold;
+        }
+
+        #section_three ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            list-style: none;
+            margin-top: 30px;
+            font-size: 16px;
+        }
+
+        #section_three li {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px;
+            width: 100%;
+        }
+
+        .contListCat {
+            width: 200px;
+        }
+        @media (max-width: 750px) {
+            #section_four #highlights {
+                flex-direction: column;
+                
+            }
+
+            #section_four #highlights .highlight-text {
+                margin-bottom: 20px;
+                max-width: 100%;
+            }
+
+            #section_four h2 {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 660px) {
+            #section_four h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            #section_four {
+                padding: 20px 20px 0 20px;
+            }
+
+            #section_three ul {
+                padding: 30px;
+                margin-top: 0px;
+            }
+
+            #section_three h2 {
+                text-align: center;
+            }
+        }
+
+    </style>
+    
+</head>
+<body>
+    <!-- NAVBAR USED FOR BIGGER DEVICES -->
+    <ul id="nav">
+        <div id="nav-left">
+            <a href="index.html"><img src="images/greenifybostonlogo.svg"/></svg></a> 
+            <li><a href="index.html">Greenify Boston</a></li>   
+        </div>
+
+        <div id="nav-right">
+            <div class="dropdown">
+                <li id="nav-contribute" class="nav-text-element dropbtn"><a class="general_hover" href="contribute.html">Contribute</a></li>
+                <div class="dropdown-content">
+                    <li id="nav-donate" class="nav-text-element"><a href="donate.html">Donate</a></li>
+                    <li id="nav-joinourteam" class="nav-text-element"><a href="joinourteam.html">Join Our Team</a></li>
+                </div>
+            </div>
+            <li id="nav-about" class="nav-text-element"><a class="general_hover" href="about.html">About</a></li>
+            <li id="nav-contact" class="nav-text-element"><a class="general_hover" href="contact.html">Contact</a></li>
+            <li id="nav-faqs" class="nav-text-element"><a class="general_hover" href="faqs.html">FAQs</a></li>
+        </div>
+    </ul>
+
+    <!-- NAVBAR USED FOR SMALLER DEVICES -->
+    <ul id="mnav">
+        <div id ="mnav-top">
+            <div id="mnav-left">
+                <a href="index.html"><img src="images/greenifybostonlogo.svg"/></a> 
+                <li><a href="index.html">Greenify Boston</a></li>   
+            </div>
+    
+            <div id="mnav-right">
+                <svg id="hamburger-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#fffdf8" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+            </div>
+        </div>
+
+        <div style="display: none;" id="mnav-bottom">
+            <li id="mnav-contribute" class="mnav-text-element"><a class="general_hover" href="contribute.html">Contribute</a></li>
+            <li id="mnav-donate" class="mnav-text-element"><a href="donate.html">Donate</a></li>
+            <li id="mnav-joinourteam" class="mnav-text-element"><a href="joinourteam.html">Join Our Team</a></li>
+            <li id="mnav-about" class="mnav-text-element"><a class="general_hover" href="about.html">About</a></li>
+            <li id="mnav-contact" class="mnav-text-element"><a class="general_hover" href="contact.html">Contact</a></li>
+            <li id="mnav-faqs" class="mnav-text-element"><a class="general_hover" href="faqs.html">FAQs</a></li>
+        </div>     
+    </ul>
+
+    <!-- PUT CONTENT HERE -->
+    <div id="section_one">
+        <div></div>
+        <div id="title_box">
+            <h1>Contribute</h1>
+        </div>
+    </div>
+
+    <div id="section_two">
+        <h2>Ways to Contribute</h2>
+
+        <div id="info_wrapper">
+            <div id="info_left">
+                <h2>Donating</h2>
+                <p id="left_text">
+                    Donating to Greenify Boston funds tree planting, cleanup 
+                    supplies, and community programs, helping us create a 
+                    greener, healthier city. Every dollar makes a difference--
+                    thank you for your support!
+                </p>
+                <p id="left_text_donate_button" class="button">Donate Today</p>
+            </div>
+            <div id="info_right">
+                <h2>Volunteering</h2>
+                <p id="right_text">
+                    Volunteering with Greenify Boston improves public spaces,
+                    protects wildlife, and fights climate change--all while
+                    building community and making a lasting impact!
+                </p>
+                <p id="right_text_signup_button" class="button">Sign Up</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="section_three">
+        <div><h2>Where Your Contributions Go</h2></div>
+        <ul>
+            <li>
+                <span class="contListCat">Tree Planting </span>
+                <span class="contListDesc">Purchasing and maintaining trees to expand Boston’s green spaces.</span>
+            </li>
+            <li>
+                <span class="contListCat">Cleanup Supplies </span>
+                <span class="contListDesc">Providing gloves, trash bags, and tools for litter removal events.</span>
+            </li>
+            <li>
+                <span class="contListCat">Community Projects </span>
+                <span class="contListDesc">Revitalizing parks, gardens, and urban green areas.</span>
+            </li>
+            <li>
+                <span class="contListCat">Education & Outreach </span>
+                <span class="contListDesc">Hosting workshops and programs on sustainability.</span>
+            </li>
+            <li>
+                <span class="contListCat">Volunteer Support </span>
+                <span class="contListDesc">Ensuring events have the resources needed for impact.</span>
+            </li>
+            <li>
+                <span class="contListCat">Operational Costs </span>
+                <span class="contListDesc">Covering permits, transportation, and event coordination.</span>
+            </li>
+        </ul>
+        
+    </div>
+
+    <div id="section_four">
+        <h2>Volunteer Opportunities</h2>
+        <div id="highlights">
+            <div class="highlight-text" id="highlight-1">
+                Community Clean-Up Crew <br> Help remove litter from parks, streets, and waterways around Boston to keep the city green and beautiful.
+            </div>
+
+            <div class="highlight-text" id="highlight-2">
+                Recycling & Waste Reduction Initiatives <br> Educate the community about proper recycling practices and help set up waste sorting stations at local events.            </div>
+
+            <div class="highlight-text" id="highlight-3">
+                Social Media & Advocacy <br> Create content, share updates, and promote Greenify Boston's mission online to spread awareness            </div>
+        </div>
+        <div id="Contact_Us">
+            <h3>
+                Contact Us For More Opportunities
+            </h3>
+            <div id="contact_button"" class="button">
+                Contact
+            </div>
+            
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <div id="footer-left-content">
+            <a id="footer-logo" href="index.html"><img src="images/greenifybostonlogo.svg"/></a> 
+
+            <p>
+                <strong style="font-size: 18px; font-family: 'DM Serif Display', serif;">Greenify Boston</strong>
+                <br>
+                Dedicated to making Boston flourish.
+            </p>
+            
+        </div>
+
+        <div id="footer-right-content">
+            <div id="footer-buttons">
+                <a href="joinourteam.html"><p id="footer-joinourteam">Join Our Team</p></a>
+                <a href="donate.html"><p id="footer-donate">Donate</p></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
