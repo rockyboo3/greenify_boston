@@ -55,9 +55,20 @@
             align-items: center;
         }
 
+        #section_two_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        #section_two_wrapper .section_two_image {
+            background-image: url("images/contribute_sider.jpg");
+            width: 200px;
+        }
+
         #section_two {
-            background-color: #243010;
-            color: white;
+            background-color: white;
+            color: #243010;
             padding: 40px 40px 60px 40px;
         }
 
@@ -69,17 +80,19 @@
         #section_two #info_wrapper {
             display: flex;
             flex-direction: row;
-            max-width: 900px;
             margin: 0 auto;
             justify-content: space-between;
+            gap: 40px;
         }
         
         #section_two #info_left, #section_two #info_right {
-            width: 340px;
+            max-width: 340px;
         }
 
         #left_text, #right_text {
-            height: 120px;
+            min-height: 140px;
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
         #section_two .button {
@@ -197,6 +210,14 @@
             #section_two #info_right {
                 margin-top: 40px;
             }
+
+            #section_two_wrapper .section_two_image {
+                display: none;
+            }
+
+            #section_two_wrapper {
+                display: block;
+            }
         }
         
         @media (max-width: 750px) {
@@ -293,33 +314,36 @@
         </div>
     </div>
 
-    <div id="section_two">
-        <h2 style="font-size: 40px;">Ways to Contribute</h2>
-
-        <div id="info_wrapper">
-            <div id="info_left">
-                <h2>Donating</h2>
-                <p id="left_text">
-                    Donating to Greenify Boston funds tree planting, cleanup 
-                    supplies, and community programs, helping us create a 
-                    greener, healthier city. Every dollar makes a difference--
-                    thank you for your support!
-                </p>
-                <a href="donate.html" style="color: white;"><p id="left_text_donate_button" class="button">Donate Today</p></a>
+    <div id="section_two_wrapper">
+        <div class="section_two_image"></div>
+        <div id="section_two">
+            <h2 style="font-size: 40px;">Ways to Contribute</h2>
+    
+            <div id="info_wrapper">
+                <div id="info_left">
+                    <h2>Donating</h2>
+                    <p id="left_text">
+                        Donating to Greenify Boston funds tree planting, cleanup 
+                        supplies, and community programs, helping us create a 
+                        greener, healthier city. Every dollar makes a difference--
+                        thank you for your support!
+                    </p>
+                    <a href="donate.html" style="color: white;"><p id="left_text_donate_button" class="button">Donate Today</p></a>
+                </div>
+                <div id="info_right">
+                    <h2>Volunteering</h2>
+                    <p id="right_text">
+                        Volunteering with Greenify Boston improves public spaces,
+                        protects wildlife, and fights climate change--all while
+                        building community and making a lasting impact!
+                    </p>
+                    <a href="joinourteam.html" style="color: white;"><p id="right_text_signup_button" class="button">Sign Up</p></a>
+                </div>
             </div>
-            <div id="info_right">
-                <h2>Volunteering</h2>
-                <p id="right_text">
-                    Volunteering with Greenify Boston improves public spaces,
-                    protects wildlife, and fights climate change--all while
-                    building community and making a lasting impact!
-                </p>
-                <a href="joinourteam.html" style="color: white;"><p id="right_text_signup_button" class="button">Sign Up</p></a>
-            </div>
+    
         </div>
-
+        <div class="section_two_image"></div>
     </div>
-
 
     <div id="section_three">
         <div><h2>Where Your Contributions Go</h2></div>
