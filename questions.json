@@ -32,12 +32,6 @@
         },
         {
             "section" : "Getting Involved",
-            "question" : "How can I become a member?",
-            "answer" : "Question 5 Answer Here",
-            "isLast" : false
-        },
-        {
-            "section" : "Getting Involved",
             "question" : "Do I need to bring anything to an event?",
             "answer" : "We provide most of the necessary tools and supplies, but we recommend wearing comfortable clothes, closed-toe shoes, and bringing a reusable water bottle. If you have gardening gloves or tools, feel free to bring them!",
             "isLast" : false
