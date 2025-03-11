@@ -440,6 +440,7 @@
                 
             </div>
             <script>
+                // Declares arrays with all of the information for the slideshow which will move across the page
                 let accomplishTitles = ["Planted 10,000+ Trees", "Removed Over 500,000 Pounds of Trash", 
                     "Helped Pass the Boston Green Business Act", "Restored the Charles River Shoreline",
                     "Held Major Corporations Accountable", "Mobilized 50,000+ Advocates", "Expanded Boston's Composting Program",
@@ -457,9 +458,12 @@
                     "Partnered with local transit authorities to push for more bike lanes, electric buses, and pedestrian-friendly infrastructure."
                 ];
                 $(document).ready( function() {
+                    // Places the first slide on the screen
                     let index = 0;
                     document.getElementById("AccHeader").innerHTML = "<h3>" + accomplishTitles[index] + "</h3>";
                     document.getElementById("AccText").innerHTML = "<h4>" + accomplishText[index] + "</h4>";
+
+                    // Sets up triggers so that the right and left arrows both result in the slide moving
                     $("#rightArrow").click( function() {
                         move("right");
                     });
@@ -467,6 +471,7 @@
                         move("left");
                     });
 
+                    // Will move the slideshow either left or right depending on what was clicked
                     function move(direction) {
                         if(direction == "left") {
                             index--;
@@ -482,6 +487,7 @@
                         document.getElementById("AccText").innerHTML = "<h4>" + accomplishText[index] + "</h4>";
                     }
 
+                    // Automatically moves the slideshow every 3 seconds
                     setInterval(function() {
                         move();
                     }, 3000);
@@ -499,6 +505,8 @@
         </div>
         <div class="leadershipContainer" id="leadershipContainer">
             <script>
+
+                // Declares the team leader as a class with the image src, name, and title
                 class teamLeader {
                     constructor(src, name, title) {
                         this.src = src;
@@ -506,6 +514,8 @@
                         this.title = title;
                     }
                 } 
+
+                // Creates the new team leaders
                 teamLeaders = [
                     new teamLeader("images/annika.jpg", "Isabella Cruz", "Executive Director"),
                     new teamLeader("images/christina.jpg", "Talia Gray", "Policy Coordinator"),
@@ -516,10 +526,13 @@
                 let width = window.innerWidth;
                 resize(width);
 
+                // Whenever the window size changes, calls the resize function to update
                 window.addEventListener('resize', function() {
                     let width = window.innerWidth;
                     resize(width);
                 });
+
+                // Resizes the teamleaders to ensure that they fit
                 function resize(width) {
                     leadershipContainer.innerHTML = ""; 
                     if(width > 900) {
@@ -528,6 +541,8 @@
                         resizeSmallWindow();
                     }
                 }
+
+                // If it is a large window, place them in a row
                 function resizeLargeWindow() {
                     let leadershipContainer = document.getElementById("leadershipContainer");
                     let newLeaders = document.createElement("div");
@@ -546,6 +561,8 @@
 
                     }
                 }
+
+                // If the window is small, place them in a 2 by 2 grid
                 function resizeSmallWindow() {
                     for(let i = 0; i < 2; i++) {
                         let leadershipContainer = document.getElementById("leadershipContainer");
